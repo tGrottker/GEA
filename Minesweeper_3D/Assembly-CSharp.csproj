@@ -47,6 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameGrid.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{E25FE51F-892D-36A5-CC05-ACC7F1A88E87}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{17D7305C-24F6-FA6D-7B70-E68D4BEDB2C6}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
