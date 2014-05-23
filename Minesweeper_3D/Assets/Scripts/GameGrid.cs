@@ -6,6 +6,8 @@ public class GameGrid : MonoBehaviour {
 	private int rows;
 	private int columns;
 	private int[,] gameGrid;
+
+	public GameObject lidPrefab;
 	public GameObject minePrefab;
 	public GameObject onePrefab;
 	public GameObject twoPrefab;
@@ -13,9 +15,9 @@ public class GameGrid : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start (/*int rows, int columns*/) {
-		this.rows = 9;//rows;
-		this.columns = 9;//columns;
+	void Start () {
+		this.rows = 9;
+		this.columns = 9;
 		initGameGrid();
 	}
 
@@ -28,6 +30,8 @@ public class GameGrid : MonoBehaviour {
 		for(int i = 0; i < this.rows; i++){
 			for(int j  = 0; j < this.columns; j++){
 				this.gameGrid[i, j] = 0;
+				GameObject lidObject = Instantiate(lidPrefab, new Vector3(i+0.5f, 0.1f, j+0.5f), Quaternion.identity) as GameObject;
+				lidObject.transform.parent = GameObject.FindWithTag("MainCamera").GetComponent<Transform>();
 			}
 		}
 
