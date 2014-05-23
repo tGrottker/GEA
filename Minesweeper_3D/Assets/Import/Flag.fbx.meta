@@ -1,0 +1,461 @@
+fileFormatVersion: 2
+guid: 641a87ec84371ae4ba02d3a7e2c3331f
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: cut_form
+    100002: //RootNode
+    100004: flaggenende
+    100006: Flaggenhalterung
+    100008: flaggenstange
+    100010: Gelenk
+    100012: gelenk1
+    100014: gelenk2
+    100016: gelenkMesh
+    100018: gelenkTransform
+    100020: pasted__flaggenende
+    100022: pasted__flaggenstange
+    100024: poleBase
+    100026: poleBase 1
+    100028: poleBase1
+    100030: poleExtension
+    100032: transform1
+    100034: transform2
+    100036: transform3
+    100038: transform4
+    100040: transform5
+    400000: cut_form
+    400002: //RootNode
+    400004: flaggenende
+    400006: Flaggenhalterung
+    400008: flaggenstange
+    400010: Gelenk
+    400012: gelenk1
+    400014: gelenk2
+    400016: gelenkMesh
+    400018: gelenkTransform
+    400020: pasted__flaggenende
+    400022: pasted__flaggenstange
+    400024: poleBase
+    400026: poleBase 1
+    400028: poleBase1
+    400030: poleExtension
+    400032: transform1
+    400034: transform2
+    400036: transform3
+    400038: transform4
+    400040: transform5
+    2300000: flaggenende
+    2300002: flaggenstange
+    2300004: gelenkMesh
+    2300006: poleBase1
+    2300008: poleExtension
+    3300000: flaggenende
+    3300002: flaggenstange
+    3300004: gelenkMesh
+    3300006: poleBase1
+    3300008: poleExtension
+    4300000: gelenkMesh
+    4300002: flaggenende
+    4300004: flaggenstange
+    4300006: poleExtension
+    4300008: poleBase1
+    7400000: NotExtended
+    7400002: ExtendPole
+    7400004: PoleExtended
+    7400006: ShowFlag
+    7400008: FullExtended
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: NotExtended
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Flaggenhalterung
+        weight: 1
+      - path: Flaggenhalterung/flaggenende
+        weight: 1
+      - path: Flaggenhalterung/flaggenstange
+        weight: 1
+      - path: Gelenk
+        weight: 1
+      - path: Gelenk/gelenkMesh
+        weight: 1
+      - path: Gelenk/gelenkTransform
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk1
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk1/transform1
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk2
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk2/transform2
+        weight: 1
+      - path: poleBase
+        weight: 1
+      - path: poleBase/cut_form
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenende
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenende/transform4
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenstange
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenstange/transform3
+        weight: 1
+      - path: poleBase/poleBase 1
+        weight: 1
+      - path: poleBase/poleBase 1/transform5
+        weight: 1
+      - path: poleBase/poleBase1
+        weight: 1
+      - path: poleExtension
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ExtendPole
+      takeName: Take 001
+      firstFrame: 24
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Flaggenhalterung
+        weight: 1
+      - path: Flaggenhalterung/flaggenende
+        weight: 1
+      - path: Flaggenhalterung/flaggenstange
+        weight: 1
+      - path: Gelenk
+        weight: 1
+      - path: Gelenk/gelenkMesh
+        weight: 1
+      - path: Gelenk/gelenkTransform
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk1
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk1/transform1
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk2
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk2/transform2
+        weight: 1
+      - path: poleBase
+        weight: 1
+      - path: poleBase/cut_form
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenende
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenende/transform4
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenstange
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenstange/transform3
+        weight: 1
+      - path: poleBase/poleBase 1
+        weight: 1
+      - path: poleBase/poleBase 1/transform5
+        weight: 1
+      - path: poleBase/poleBase1
+        weight: 1
+      - path: poleExtension
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: PoleExtended
+      takeName: Take 001
+      firstFrame: 28
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Flaggenhalterung
+        weight: 1
+      - path: Flaggenhalterung/flaggenende
+        weight: 1
+      - path: Flaggenhalterung/flaggenstange
+        weight: 1
+      - path: Gelenk
+        weight: 1
+      - path: Gelenk/gelenkMesh
+        weight: 1
+      - path: Gelenk/gelenkTransform
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk1
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk1/transform1
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk2
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk2/transform2
+        weight: 1
+      - path: poleBase
+        weight: 1
+      - path: poleBase/cut_form
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenende
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenende/transform4
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenstange
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenstange/transform3
+        weight: 1
+      - path: poleBase/poleBase 1
+        weight: 1
+      - path: poleBase/poleBase 1/transform5
+        weight: 1
+      - path: poleBase/poleBase1
+        weight: 1
+      - path: poleExtension
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ShowFlag
+      takeName: Take 001
+      firstFrame: 48
+      lastFrame: 52
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Flaggenhalterung
+        weight: 1
+      - path: Flaggenhalterung/flaggenende
+        weight: 1
+      - path: Flaggenhalterung/flaggenstange
+        weight: 1
+      - path: Gelenk
+        weight: 1
+      - path: Gelenk/gelenkMesh
+        weight: 1
+      - path: Gelenk/gelenkTransform
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk1
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk1/transform1
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk2
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk2/transform2
+        weight: 1
+      - path: poleBase
+        weight: 1
+      - path: poleBase/cut_form
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenende
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenende/transform4
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenstange
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenstange/transform3
+        weight: 1
+      - path: poleBase/poleBase 1
+        weight: 1
+      - path: poleBase/poleBase 1/transform5
+        weight: 1
+      - path: poleBase/poleBase1
+        weight: 1
+      - path: poleExtension
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FullExtended
+      takeName: Take 001
+      firstFrame: 52
+      lastFrame: 72
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Flaggenhalterung
+        weight: 1
+      - path: Flaggenhalterung/flaggenende
+        weight: 1
+      - path: Flaggenhalterung/flaggenstange
+        weight: 1
+      - path: Gelenk
+        weight: 1
+      - path: Gelenk/gelenkMesh
+        weight: 1
+      - path: Gelenk/gelenkTransform
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk1
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk1/transform1
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk2
+        weight: 1
+      - path: Gelenk/gelenkTransform/gelenk2/transform2
+        weight: 1
+      - path: poleBase
+        weight: 1
+      - path: poleBase/cut_form
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenende
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenende/transform4
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenstange
+        weight: 1
+      - path: poleBase/cut_form/pasted__flaggenstange/transform3
+        weight: 1
+      - path: poleBase/poleBase 1
+        weight: 1
+      - path: poleBase/poleBase 1/transform5
+        weight: 1
+      - path: poleBase/poleBase1
+        weight: 1
+      - path: poleExtension
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
