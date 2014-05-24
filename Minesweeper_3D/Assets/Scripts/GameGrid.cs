@@ -31,7 +31,7 @@ public class GameGrid : MonoBehaviour {
 			for(int j  = 0; j < this.columns; j++){
 				this.gameGrid[i, j] = 0;
 				GameObject lidObject = Instantiate(lidPrefab, new Vector3(i+0.5f, 0.1f, j+0.5f), Quaternion.identity) as GameObject;
-				lidObject.transform.parent = GameObject.FindWithTag("MainCamera").GetComponent<Transform>();
+				lidObject.transform.parent = GameObject.FindWithTag("GameArea").GetComponent<Transform>();
 			}
 		}
 
@@ -52,7 +52,7 @@ public class GameGrid : MonoBehaviour {
 
 
 			GameObject mineObject = Instantiate(minePrefab, new Vector3(x+0.5f, 0f, y+0.5f), Quaternion.identity) as GameObject;
-			mineObject.transform.parent = GameObject.FindWithTag("MainCamera").GetComponent<Transform>();
+			mineObject.transform.parent = GameObject.FindWithTag("GameArea").GetComponent<Transform>();
 			this.gameGrid[x, y] = 9;
 			for(int i = Mathf.Max(x-1, 0); i <= Mathf.Min(x+1, this.columns-1); i++){
 				for(int j = Mathf.Max(y-1, 0); j <= Mathf.Min (y+1, this.rows-1); j++){
@@ -79,7 +79,7 @@ public class GameGrid : MonoBehaviour {
 					continue;
 				}
 				GameObject numberObject = Instantiate(number, new Vector3(i+0.5f, 0.01f, j+0.5f), number.transform.rotation) as GameObject;
-				numberObject.transform.parent = GameObject.FindWithTag("MainCamera").GetComponent<Transform>();
+				numberObject.transform.parent = GameObject.FindWithTag("GameArea").GetComponent<Transform>();
 			}
 		}
 	}
