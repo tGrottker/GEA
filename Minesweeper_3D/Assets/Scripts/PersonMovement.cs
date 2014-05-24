@@ -42,15 +42,12 @@ public class PersonMovement : MonoBehaviour {
 			iTween.MoveTo(gameObject, iTween.Hash("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, "looktarget", looktarget, "easetype", "easeInOutQuad"));
 		}
 		if (checkField) {
-			int x = Mathf.FloorToInt(position.x);
-			int z = Mathf.FloorToInt(position.z);
+			Vector3 field = position + view / 2;
+			int x = Mathf.FloorToInt(field.x);
+			int z = Mathf.FloorToInt(field.z);
 			int element = grid.getGameGridAtPosition(x, z);
-			// if lid exists at pos (x,z)
-			if (element != 9) {
-				grid.deleteLidAtPosition(x, z);
-			} else {
-				// BOOOOOM!!!
-			}
+			grid.deleteLidAtPosition(x, z);
+
 		}
 		if (flagField) {
 				
