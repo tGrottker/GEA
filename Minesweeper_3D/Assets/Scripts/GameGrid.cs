@@ -6,6 +6,7 @@ public class GameGrid : MonoBehaviour {
 	private int rows;
 	private int columns;
 	private int[,] gameGrid;
+	private GameObject[,] lidGrid;
 
 	public GameObject lidPrefab;
 	public GameObject minePrefab;
@@ -25,6 +26,10 @@ public class GameGrid : MonoBehaviour {
 		return this.gameGrid [row, column];
 	}
 
+	public void deleteLidAtPosition(int row, int columns){
+		this.lidGrid[row, column].destroy();
+	}
+
 	private  void initGameGrid(){
 		this.gameGrid = new int[this.rows, this.columns];
 		for(int i = 0; i < this.rows; i++){
@@ -32,6 +37,7 @@ public class GameGrid : MonoBehaviour {
 				this.gameGrid[i, j] = 0;
 				GameObject lidObject = Instantiate(lidPrefab, new Vector3(i+0.5f, 0.1f, j+0.5f), Quaternion.identity) as GameObject;
 				lidObject.transform.parent = GameObject.FindWithTag("GameArea").GetComponent<Transform>();
+				this.lidGrid[i, j] = lidObject;
 			}
 		}
 
