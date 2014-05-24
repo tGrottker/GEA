@@ -4,6 +4,7 @@ using System.Collections;
 public class PersonMovement : MonoBehaviour {
 
 	public GameObject plane;
+	public GameObject flagPrefab;
 	private Vector3 position;
 	private Vector3 view;
 	private GameGrid grid;
@@ -45,12 +46,17 @@ public class PersonMovement : MonoBehaviour {
 			Vector3 field = position + view / 2;
 			int x = Mathf.FloorToInt(field.x);
 			int z = Mathf.FloorToInt(field.z);
-			int element = grid.getGameGridAtPosition(x, z);
 			grid.deleteLidAtPosition(x, z);
 
 		}
 		if (flagField) {
-				
+			Vector3 field = position + view / 2;
+			int x = Mathf.FloorToInt(field.x);
+			int z = Mathf.FloorToInt(field.z);
+			bool flagable = grid.hasLidAtPosition(x, z);
+			GameObject flagObject = Instantiate(flagPrefab, new Vector3(field.x, 0.1f, field.z), Quaternion.identity) as GameObject;
+			flagObject.transform.parent = GameObject.FindWithTag("GameArea").GetComponent<Transform>();
+			//flagObject.animation.Play();
 		}
 	}
 }
