@@ -27,11 +27,12 @@ public class GameGrid : MonoBehaviour {
 	}
 
 	public void deleteLidAtPosition(int row, int column){
-		this.lidGrid[row, column].destroy();
+		Destroy(this.lidGrid[row, column]);
 	}
 
 	private  void initGameGrid(){
 		this.gameGrid = new int[this.rows, this.columns];
+		this.lidGrid = new GameObject[this.rows, this.columns];
 		for(int i = 0; i < this.rows; i++){
 			for(int j  = 0; j < this.columns; j++){
 				this.gameGrid[i, j] = 0;

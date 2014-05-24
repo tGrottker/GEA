@@ -47,7 +47,7 @@ public class PersonMovement : MonoBehaviour {
 			int element = grid.getGameGridAtPosition(x, z);
 			// if lid exists at pos (x,z)
 			if (element != 9) {
-				
+				grid.deleteLidAtPosition(x, z);
 			} else {
 				// BOOOOOM!!!
 			}
