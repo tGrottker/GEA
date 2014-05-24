@@ -30,6 +30,13 @@ public class GameGrid : MonoBehaviour {
 		Destroy(this.lidGrid[row, column]);
 	}
 
+	public bool hasLidAtPosition(int row, int column){
+		if(this.lidGrid[row, column]){
+			return true;
+		}else{
+			return false;
+		}
+	}
 	private  void initGameGrid(){
 		this.gameGrid = new int[this.rows, this.columns];
 		this.lidGrid = new GameObject[this.rows, this.columns];
