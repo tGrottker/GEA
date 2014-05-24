@@ -19,6 +19,7 @@ public class PersonMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		bool stepForward = Input.GetKeyDown (KeyCode.W);
+		bool stepBack = Input.GetKeyDown (KeyCode.S);
 		bool turnLeft = Input.GetKeyDown (KeyCode.A);
 		bool turnRight = Input.GetKeyDown (KeyCode.D);
 		bool checkField = Input.GetMouseButtonDown (0);
@@ -27,29 +28,28 @@ public class PersonMovement : MonoBehaviour {
 		if (stepForward) {
 			position = position + view;
 			iTween.MoveTo(gameObject, iTween.Hash("position", position, "time", 1f, "orienttopath", false, "lookahead", 0f, "easetype", "easeInOutQuad"));
-		}
-		if (turnLeft) {
+		} else if (stepBack) {
+			position = position - view;
+			iTween.MoveTo(gameObject, iTween.Hash("position", position, "time", 1f, "orienttopath", false, "lookahead", 0f, "easetype", "easeInOutQuad"));
+		} else if (turnLeft) {
 			Vector3 viewn = -gameObject.transform.right.normalized;
 			position = position + (view + viewn) / 2;
 			view = viewn;
 			Vector3 looktarget = position + view;
 			iTween.MoveTo(gameObject, iTween.Hash("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, "looktarget", looktarget, "easetype", "easeInOutQuad"));
-		}
-		if (turnRight) {
+		} else if (turnRight) {
 			Vector3 viewn = gameObject.transform.right.normalized;
 			position = position + (view + viewn) / 2;
 			view = viewn;
 			Vector3 looktarget = position + view;
 			iTween.MoveTo(gameObject, iTween.Hash("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, "looktarget", looktarget, "easetype", "easeInOutQuad"));
-		}
-		if (checkField) {
+		} else if (checkField) {
 			Vector3 field = position + view / 2;
 			int x = Mathf.FloorToInt(field.x);
 			int z = Mathf.FloorToInt(field.z);
 			grid.deleteLidAtPosition(x, z);
 
-		}
-		if (flagField) {
+		} else if (flagField) {
 			Vector3 field = position + view / 2;
 			int x = Mathf.FloorToInt(field.x);
 			int z = Mathf.FloorToInt(field.z);
