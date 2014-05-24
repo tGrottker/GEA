@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Pixelplacement\iTweenPath\iTweenPath.cs" />
      <Compile Include="Assets\Scripts\GameGrid.cs" />
      <Compile Include="Assets\Scripts\PersonMovement.cs" />
      <Compile Include="Assets\iTween\Plugins\iTween.cs" />

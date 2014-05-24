@@ -26,7 +26,7 @@ public class GameGrid : MonoBehaviour {
 		return this.gameGrid [row, column];
 	}
 
-	public void deleteLidAtPosition(int row, int columns){
+	public void deleteLidAtPosition(int row, int column){
 		this.lidGrid[row, column].destroy();
 	}
 
