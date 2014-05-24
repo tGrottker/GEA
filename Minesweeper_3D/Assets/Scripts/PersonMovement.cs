@@ -3,13 +3,16 @@ using System.Collections;
 
 public class PersonMovement : MonoBehaviour {
 
+	public GameObject plane;
 	private Vector3 position;
-	private Vector3 forward;
+	private Vector3 view;
+	private GameGrid grid;
 
 	// Use this for initialization
 	void Start () {
 		position = gameObject.transform.position;
-		forward = gameObject.transform.forward;
+		view = gameObject.transform.forward.normalized;
+		grid = plane.GetComponent <GameGrid>();
 	}
 	
 	// Update is called once per frame
@@ -17,19 +20,40 @@ public class PersonMovement : MonoBehaviour {
 		bool stepForward = Input.GetKeyDown (KeyCode.W);
 		bool turnLeft = Input.GetKeyDown (KeyCode.A);
 		bool turnRight = Input.GetKeyDown (KeyCode.D);
+		bool checkField = Input.GetMouseButtonDown (0);
+		bool flagField = Input.GetMouseButtonDown (1);
 
 		if (stepForward) {
-			position = position + forward.normalized;
-			iTween.MoveTo(gameObject, iTween.Hash("position", position, "time", 3f, "orienttopath", true, "lookahead", 0));
-			//iTween.MoveAdd(gameObject, new Vector3(0f, 0f, -1f), 10f);
+			position = position + view;
+			iTween.MoveTo(gameObject, iTween.Hash("position", position, "time", 1f, "orienttopath", false, "lookahead", 0f, "easetype", "easeInOutQuad"));
 		}
 		if (turnLeft) {
-			print ("left");
-			iTween.RotateBy(gameObject, iTween.Hash("y", 0.25f, "time", 10f));
+			Vector3 viewn = -gameObject.transform.right.normalized;
+			position = position + (view + viewn) / 2;
+			view = viewn;
+			Vector3 looktarget = position + view;
+			iTween.MoveTo(gameObject, iTween.Hash("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, "looktarget", looktarget, "easetype", "easeInOutQuad"));
 		}
 		if (turnRight) {
-			print ("right");
-			iTween.RotateBy(gameObject, iTween.Hash("y", -0.25f, "time", 10f));
+			Vector3 viewn = gameObject.transform.right.normalized;
+			position = position + (view + viewn) / 2;
+			view = viewn;
+			Vector3 looktarget = position + view;
+			iTween.MoveTo(gameObject, iTween.Hash("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, "looktarget", looktarget, "easetype", "easeInOutQuad"));
+		}
+		if (checkField) {
+			int x = Mathf.FloorToInt(position.x);
+			int z = Mathf.FloorToInt(position.z);
+			int element = grid.getGameGridAtPosition(x, z);
+			// if lid exists at pos (x,z)
+			if (element != 9) {
+				
+			} else {
+				// BOOOOOM!!!
+			}
+		}
+		if (flagField) {
+				
 		}
 	}
 }
