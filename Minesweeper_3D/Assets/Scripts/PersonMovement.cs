@@ -8,6 +8,7 @@ public class PersonMovement : MonoBehaviour {
 	private Vector3 position;
 	private Vector3 view;
 	private GameGrid grid;
+	private bool readyForMovement;
 
 	// Use this for initialization
 	void Start () {
@@ -35,14 +36,16 @@ public class PersonMovement : MonoBehaviour {
 			Vector3 viewn = -gameObject.transform.right.normalized;
 			position = position + (view + viewn) / 2;
 			view = viewn;
-			Vector3 looktarget = position + view;
-			iTween.MoveTo(gameObject, iTween.Hash("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, "looktarget", looktarget, "easetype", "easeInOutQuad"));
+			Vector3 looktarget = position + 100000 * view;
+			iTween.MoveTo(gameObject, iTween.Hash("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, /*"looktarget", looktarget,*/ "easetype", "easeInOutQuad"));
+			iTween.LookTo(gameObject, iTween.Hash("looktarget", looktarget, "time", 1.8f));
 		} else if (turnRight) {
 			Vector3 viewn = gameObject.transform.right.normalized;
 			position = position + (view + viewn) / 2;
 			view = viewn;
-			Vector3 looktarget = position + view;
-			iTween.MoveTo(gameObject, iTween.Hash("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, "looktarget", looktarget, "easetype", "easeInOutQuad"));
+			Vector3 looktarget = position + 100000 * view;
+			iTween.MoveTo(gameObject, iTween.Hash("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, /*"looktarget", looktarget,*/ "easetype", "easeInOutQuad"));
+			iTween.LookTo(gameObject, iTween.Hash("looktarget", looktarget, "time", 1.8f));
 		} else if (checkField) {
 			Vector3 field = position + view / 2;
 			int x = Mathf.FloorToInt(field.x);
