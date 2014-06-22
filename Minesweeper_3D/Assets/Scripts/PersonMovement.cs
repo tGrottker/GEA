@@ -65,6 +65,14 @@ public class PersonMovement : MonoBehaviour
 										int x = Mathf.FloorToInt (field.x);
 										int z = Mathf.FloorToInt (field.z);
 										grid.deleteLidAtPosition (x, z);
+										int state = grid.getGameGridAtPosition (x, z);
+										if (state == 9) {
+												print ("BOOOM!!!");
+												print ("You lost!");
+										}
+										if (grid.isFinished ()) {
+												print ("You won!");
+										}
 
 								} else if (flagField) {
 										nextMove = nextMove + 0.3f;
@@ -78,7 +86,11 @@ public class PersonMovement : MonoBehaviour
 								}
 						}
 				} else {
+<<<<<<< HEAD
 					// TODO do menu
+=======
+						// TODO do menu
+>>>>>>> feature/logic
 				}
 		}
 }
