@@ -3,8 +3,10 @@ using System.Collections;
 
 public class GameGrid : MonoBehaviour {
 
+	private int mines;
 	private int rows;
 	private int columns;
+	private int leftLids;
 	private int[,] gameGrid;
 	private GameObject[,] lidGrid;
 
@@ -17,9 +19,15 @@ public class GameGrid : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		this.mines = 10;
 		this.rows = 9;
 		this.columns = 9;
+		this.leftLids = columns * rows;
 		initGameGrid();
+	}
+
+	public bool isFinished() {
+		return leftLids - mines == 0;
 	}
 
 	public int getGameGridAtPosition(int row, int column){
@@ -27,7 +35,10 @@ public class GameGrid : MonoBehaviour {
 	}
 
 	public void deleteLidAtPosition(int row, int column){
-		Destroy(this.lidGrid[row, column]);
+		if (hasLidAtPosition(row, column)) {
+			Destroy(this.lidGrid[row, column]);
+			leftLids--;
+		}
 	}
 
 	public bool hasLidAtPosition(int row, int column){
@@ -37,6 +48,7 @@ public class GameGrid : MonoBehaviour {
 			return false;
 		}
 	}
+
 	private  void initGameGrid(){
 		this.gameGrid = new int[this.rows, this.columns];
 		this.lidGrid = new GameObject[this.rows, this.columns];
@@ -49,7 +61,6 @@ public class GameGrid : MonoBehaviour {
 			}
 		}
 
-		int mines = 10;
 		//int seed = 8;
 		//Random.seed = seed;
 
