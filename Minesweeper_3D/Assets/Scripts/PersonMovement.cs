@@ -86,11 +86,8 @@ public class PersonMovement : MonoBehaviour
 								}
 						}
 				} else {
-<<<<<<< HEAD
 					// TODO do menu
-=======
-						// TODO do menu
->>>>>>> feature/logic
+					// TODO do menu
 				}
 		}
 }
