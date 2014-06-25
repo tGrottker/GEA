@@ -9,12 +9,16 @@ public class GameGrid : MonoBehaviour {
 	private int leftLids;
 	private int[,] gameGrid;
 	private GameObject[,] lidGrid;
+	private PersonMovement characterScript;
+	private GameObject minimapPositionSprite;
 
 	public GameObject lidPrefab;
 	public GameObject minePrefab;
 	public GameObject onePrefab;
 	public GameObject twoPrefab;
 	public GameObject threePrefab;
+	public GameObject character;
+	public GameObject minimapPosition;
 
 
 	// Use this for initialization
@@ -23,6 +27,8 @@ public class GameGrid : MonoBehaviour {
 		this.rows = 9;
 		this.columns = 9;
 		this.leftLids = columns * rows;
+
+		characterScript = character.GetComponent <PersonMovement>();
 		initGameGrid();
 	}
 
@@ -107,10 +113,21 @@ public class GameGrid : MonoBehaviour {
 				numberObject.transform.parent = GameObject.FindWithTag("GameArea").GetComponent<Transform>();
 			}
 		}
+		minimapPositionSprite = Instantiate (minimapPosition, new Vector3(getActualMinimapPosition().x, 0.25f, getActualMinimapPosition().z), minimapPosition.transform.rotation) as GameObject;
+		minimapPositionSprite.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
+	}
+
+	private Vector3 getActualMinimapPosition(){
+		Vector3 actualMinimapPosition = characterScript.getCurrentField ();
+		actualMinimapPosition.x = actualMinimapPosition.x + 0.5f;
+		actualMinimapPosition.z = actualMinimapPosition.z + 0.5f;
+		return actualMinimapPosition;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (minimapPositionSprite != null) {
+			minimapPositionSprite.transform.position = new Vector3 (getActualMinimapPosition ().x, 0.25f, getActualMinimapPosition ().z);
+		}
 	}
 }
