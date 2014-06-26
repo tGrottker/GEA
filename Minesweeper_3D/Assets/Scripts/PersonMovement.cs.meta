@@ -2,7 +2,9 @@ fileFormatVersion: 2
 guid: 29e04422c0735554a946b522705929d2
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - plane: {instanceID: 0}
+  - flagPrefab: {fileID: 100000, guid: 7846b02d8a093da439d71fbe612551d1, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
