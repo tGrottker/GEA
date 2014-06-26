@@ -17,6 +17,11 @@ public class GameGrid : MonoBehaviour {
 	public GameObject onePrefab;
 	public GameObject twoPrefab;
 	public GameObject threePrefab;
+	public GameObject fourPrefab;
+	public GameObject fivePrefab;
+	public GameObject sixPrefab;
+	public GameObject sevenPrefab;
+	public GameObject eightPrefab;
 	public GameObject character;
 	public GameObject minimapPosition;
 
@@ -105,6 +110,21 @@ public class GameGrid : MonoBehaviour {
 					break;
 				case 3:
 					number = threePrefab;
+					break;
+				case 4:
+					number = fourPrefab;
+					break;
+				case 5:
+					number = fivePrefab;
+					break;
+				case 6:
+					number = sixPrefab;
+					break;
+				case 7:
+					number = sevenPrefab;
+					break;
+				case 8:
+					number = eightPrefab;
 					break;
 				default:
 					continue;

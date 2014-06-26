@@ -8,6 +8,11 @@ MonoImporter:
   - onePrefab: {fileID: 100000, guid: 31582068d7776d94fb4dfe155ca9b4f2, type: 2}
   - twoPrefab: {fileID: 100000, guid: bda7937297d3c974ba4fe7d5e65dfc01, type: 2}
   - threePrefab: {fileID: 100000, guid: 70774265a4d5f6d4fa43c706d1a7ebf2, type: 2}
+  - fourPrefab: {fileID: 100000, guid: e2aa57e9615296e4190d5f50dd1cd1a9, type: 2}
+  - fivePrefab: {fileID: 100000, guid: 7a834e79393e39745a2cfece10769484, type: 2}
+  - sixPrefab: {fileID: 100000, guid: c05c9a33351f06a4b87c1e9cb8ecd1d2, type: 2}
+  - sevenPrefab: {fileID: 100000, guid: b29b45c21c9ce874d80e5f5ade8d3e81, type: 2}
+  - eightPrefab: {fileID: 100000, guid: df0b9495db3de964ebe5234ea54e9e41, type: 2}
   - character: {instanceID: 0}
   - minimapPosition: {fileID: 100000, guid: 130481ea3a0ebb642a47a3d60d522b70, type: 2}
   executionOrder: 0
