@@ -4,6 +4,7 @@ using System.Collections;
 public class PersonMovement : MonoBehaviour
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public GameObject plane;
 	public GameObject flagPrefab;
 	private Vector3 position;
@@ -17,6 +18,9 @@ public class PersonMovement : MonoBehaviour
 <<<<<<< HEAD
 =======
 		public GameObject flagSp		public GameObject flagSprite;
+>>>>>>> created and added FlagSprite for Minimap
+=======
+		public GameObject flagSprite;
 >>>>>>> created and added FlagSprite for Minimap
 		public GameObject plane;
 		public GameObject flagPrefab;
@@ -32,6 +36,7 @@ public class PersonMovement : MonoBehaviour
 	public GameObject flagSprite;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private Vector3 position;
 	private Vector3 view;
 	private GameGrid grid;
@@ -43,6 +48,8 @@ public class PersonMovement : MonoBehaviour
 >>>>>>> created and added FlagSprite for Minimap
 =======
 
+=======
+>>>>>>> created and added FlagSprite for Minimap
 		// Use this for initialization
 		void Start ()
 		{
@@ -103,6 +110,7 @@ public class PersonMovement : MonoBehaviour
 										print ("You lost!");
 								}
 <<<<<<< HEAD
+<<<<<<< HEAD
 								if (grid.isFinished ()) {
 										print ("You won!");
 								}
@@ -137,6 +145,17 @@ public class PersonMovement : MonoBehaviour
 			return;
 =======
 								if (grid.isFinished ()) {										print ("You won!");								}						} else if (flagField) {								nextMove = nextMove + 0.3f;								Vector3 field = position + view / 2;								int x = Mathf.FloorToInt (field.x);								int z = Mathf.FloorToInt (field.z);								grid.toggleFlagAtPosition (nt = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
+=======
+								if (grid.isFinished ()) {										
+									print ("You won!");
+								}
+						} else if (flagField) {
+								nextMove = nextMove + 0.3f;
+								Vector3 field = position + view / 2;
+								int x = Mathf.FloorToInt (field.x);
+								int z = Mathf.FloorToInt (field.z);
+								grid.toggleFlagAtPosition (nt = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
+>>>>>>> created and added FlagSprite for Minimap
 					if(flagable){
 						GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.1f, field.z), Quaternion.identity) as GameObject;
 						flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
