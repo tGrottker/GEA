@@ -5,6 +5,8 @@ public class PersonMovement : MonoBehaviour{
 
 	public GameObject plane;
 	public GameObject flagPrefab;
+	public GameObject flagSprite;
+
 	private Vector3 position;
 	private Vector3 view;
 	private GameGrid grid;
@@ -76,8 +78,13 @@ public class PersonMovement : MonoBehaviour{
 					int x = Mathf.FloorToInt (field.x);
 					int z = Mathf.FloorToInt (field.z);
 					bool flagable = grid.hasLidAtPosition (x, z);
-					GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.1f, field.z), Quaternion.identity) as GameObject;
-					flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
+					if(flagable){
+						GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.1f, field.z), Quaternion.identity) as GameObject;
+						flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
+
+						GameObject minimapFlag = Instantiate (flagSprite, new Vector3 (field.x, 0.2f, field.z), flagSprite.transform.rotation) as GameObject;
+						minimapFlag.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
+					}
 					//flagObject.animation.Play();
 				}
 			}
