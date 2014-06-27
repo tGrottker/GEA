@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PersonMovement : MonoBehaviour
 {
-
+		public GameObject flagSp		public GameObject flagSprite;
 		public GameObject plane;
 		public GameObject flagPrefab;
 		private Vector3 position;
@@ -12,6 +12,7 @@ public class PersonMovement : MonoBehaviour
 		private bool readyForMovement;
 		private float nextMove;
 		private PauseMenu pauseMenu;	
+
 
 		// Use this for initialization
 		void Start ()
@@ -73,20 +74,16 @@ public class PersonMovement : MonoBehaviour
 										print ("BOOOM!!!");
 										print ("You lost!");
 								}
-								if (grid.isFinished ()) {
-										print ("You won!");
-								}
-						} else if (flagField) {
-								nextMove = nextMove + 0.3f;
-								Vector3 field = position + view / 2;
-								int x = Mathf.FloorToInt (field.x);
-								int z = Mathf.FloorToInt (field.z);
-								grid.toggleFlagAtPosition (x, z);
-								/*bool flagable = grid.hasLidAtPosition (x, z);
-					GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.1f, field.z), Quaternion.identity) as GameObject;
+								if (grid.isFinished ()) {										print ("You won!");								}						} else if (flagField) {								nextMove = nextMove + 0.3f;								Vector3 field = position + view / 2;								int x = Mathf.FloorToInt (field.x);								int z = Mathf.FloorToInt (field.z);								grid.toggleFlagAtPosition (nt = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
+					if(flagable){
+						GameObject flagObject = Instantiate (flagPrefab, new Vector3 (fieldx, 0.1f, field.z), Quaternion.identity) as GameObject;
 					flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();*/
 								//flagObject.animation.Play();
 						}
+
+						GameObject minimapFlag = Instantiate (flagSprite, new Vector3 (field.x, 0.2f, field.z), flagSprite.transform.rotation) as GameObject;
+						minimapFlag.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
+					}
 				}
 
 		}
