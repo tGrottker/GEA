@@ -62,6 +62,7 @@ public class PersonMovement : MonoBehaviour
 				}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 				if (nextMove < Time.time) {
 						if (stepForward) {
 								nextMove = nextMove + 1.2f;
@@ -115,6 +116,8 @@ public class PersonMovement : MonoBehaviour
 						}
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> added new Flag model; added new Mine model, added lights to flag, added animation to flag
 		if (!paused) {
 			if (nextMove < Time.time) {
 				if (stepForward) {
@@ -162,10 +165,15 @@ public class PersonMovement : MonoBehaviour
 					int z = Mathf.FloorToInt (field.z);
 					bool flagable = grid.hasLidAtPosition (x, z);
 					if(flagable){
+<<<<<<< HEAD
 						GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.5f, field.z), Quaternion.identity) as GameObject;
 						flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
 =======
 >>>>>>> created and added FlagSprite for Minimap
+=======
+						GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.1f, field.z), Quaternion.identity) as GameObject;
+						flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
+>>>>>>> added new Flag model; added new Mine model, added lights to flag, added animation to flag
 
 						GameObject minimapFlag = Instantiate (flagSprite, new Vector3 (field.x, 0.2f, field.z), flagSprite.transform.rotation) as GameObject;
 						minimapFlag.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
