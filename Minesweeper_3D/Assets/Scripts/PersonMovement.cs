@@ -148,8 +148,6 @@ public class PersonMovement : MonoBehaviour
 =======
 								if (grid.isFinished ()) {										
 									print ("You won!");
-								}
-						} else if (flagField) {
 								nextMove = nextMove + 0.3f;
 								Vector3 field = position + view / 2;
 								int x = Mathf.FloorToInt (field.x);
@@ -159,10 +157,6 @@ public class PersonMovement : MonoBehaviour
 					if(flagable){
 						GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.1f, field.z), Quaternion.identity) as GameObject;
 						flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
-						//flagObject.animation.Play();
-						}
-								//flagObject.animation.Play();
-						}
 
 						GameObject minimapFlag = Instantiate (flagSprite, new Vector3 (field.x, 0.2f, field.z), flagSprite.transform.rotation) as GameObject;
 						minimapFlag.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
