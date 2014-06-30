@@ -1,77 +1,40 @@
 fileFormatVersion: 2
-guid: 213fc229f4fafaf47bef9371c9ac8905
+guid: 87f7b8005ec4efd408fc976eec94f610
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: bend1Handle
-    100002: cut_form
-    100004: //RootNode
-    100006: flaggenende
-    100008: Flaggenhalterung
-    100010: flaggenstange
-    100012: Gelenk
-    100014: gelenk1
-    100016: gelenk2
-    100018: gelenkMesh
-    100020: gelenkTransform
-    100022: pasted__flaggenende
-    100024: pasted__flaggenstange
-    100026: poleBase
-    100028: poleBase 1
-    100030: poleBase1
-    100032: poleExtension
-    100034: pSphere1
-    100036: transform1
-    100038: transform2
-    100040: transform3
-    100042: transform4
-    100044: transform5
-    400000: bend1Handle
-    400002: cut_form
-    400004: //RootNode
-    400006: flaggenende
-    400008: Flaggenhalterung
-    400010: flaggenstange
-    400012: Gelenk
-    400014: gelenk1
-    400016: gelenk2
-    400018: gelenkMesh
-    400020: gelenkTransform
-    400022: pasted__flaggenende
-    400024: pasted__flaggenstange
-    400026: poleBase
-    400028: poleBase 1
-    400030: poleBase1
-    400032: poleExtension
-    400034: pSphere1
-    400036: transform1
-    400038: transform2
-    400040: transform3
-    400042: transform4
-    400044: transform5
-    2300000: flaggenende
-    2300002: flaggenstange
-    2300004: gelenkMesh
-    2300006: poleBase1
-    2300008: poleExtension
-    2300010: pSphere1
-    3300000: flaggenende
-    3300002: flaggenstange
-    3300004: gelenkMesh
-    3300006: poleBase1
-    3300008: poleExtension
-    3300010: pSphere1
-    4300000: gelenkMesh
-    4300002: flaggenende
-    4300004: flaggenstange
-    4300006: poleExtension
-    4300008: poleBase1
-    4300010: pSphere1
-    7400000: extendPole
-    7400002: compactForm
-    7400004: halfOpen
-    7400006: showFlagConnector
-    7400008: FullExtend
+    100000: //RootNode
+    100002: flagLamp
+    100004: flagLampBase
+    100006: flagLampCover
+    100008: flagPole
+    100010: parabol
+    100012: parabol1
+    100014: parabol2
+    400000: //RootNode
+    400002: flagLamp
+    400004: flagLampBase
+    400006: flagLampCover
+    400008: flagPole
+    400010: parabol
+    400012: parabol1
+    400014: parabol2
+    2300000: flagLampBase
+    2300002: flagLampCover
+    2300004: flagPole
+    2300006: parabol1
+    2300008: parabol2
+    3300000: flagLampBase
+    3300002: flagLampCover
+    3300004: flagPole
+    3300006: parabol1
+    3300008: parabol2
+    4300000: parabol1
+    4300002: parabol2
+    4300004: flagLampBase
+    4300006: flagLampCover
+    4300008: flagPole
+    7400000: Rotation
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -89,16 +52,16 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: extendPole
+      name: Rotation
       takeName: Take 001
-      firstFrame: 24
-      lastFrame: 28
+      firstFrame: 1
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -114,337 +77,19 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: Flaggenhalterung
+      - path: flagLamp
         weight: 1
-      - path: Flaggenhalterung/bend1Handle
+      - path: flagLamp/flagLampBase
         weight: 1
-      - path: Flaggenhalterung/flaggenende
+      - path: flagLamp/flagLampCover
         weight: 1
-      - path: Flaggenhalterung/flaggenstange
+      - path: flagLamp/parabol
         weight: 1
-      - path: Gelenk
+      - path: flagLamp/parabol/parabol1
         weight: 1
-      - path: Gelenk/gelenkMesh
+      - path: flagLamp/parabol/parabol2
         weight: 1
-      - path: Gelenk/gelenkTransform
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk1
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk1/transform1
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk2
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk2/transform2
-        weight: 1
-      - path: poleBase
-        weight: 1
-      - path: poleBase/cut_form
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenende
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenende/transform4
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenstange
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenstange/transform3
-        weight: 1
-      - path: poleBase/poleBase 1
-        weight: 1
-      - path: poleBase/poleBase 1/transform5
-        weight: 1
-      - path: poleBase/poleBase1
-        weight: 1
-      - path: poleExtension
-        weight: 1
-      - path: pSphere1
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-    - serializedVersion: 16
-      name: compactForm
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 23
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Flaggenhalterung
-        weight: 1
-      - path: Flaggenhalterung/bend1Handle
-        weight: 1
-      - path: Flaggenhalterung/flaggenende
-        weight: 1
-      - path: Flaggenhalterung/flaggenstange
-        weight: 1
-      - path: Gelenk
-        weight: 1
-      - path: Gelenk/gelenkMesh
-        weight: 1
-      - path: Gelenk/gelenkTransform
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk1
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk1/transform1
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk2
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk2/transform2
-        weight: 1
-      - path: poleBase
-        weight: 1
-      - path: poleBase/cut_form
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenende
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenende/transform4
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenstange
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenstange/transform3
-        weight: 1
-      - path: poleBase/poleBase 1
-        weight: 1
-      - path: poleBase/poleBase 1/transform5
-        weight: 1
-      - path: poleBase/poleBase1
-        weight: 1
-      - path: poleExtension
-        weight: 1
-      - path: pSphere1
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-    - serializedVersion: 16
-      name: halfOpen
-      takeName: Take 001
-      firstFrame: 29
-      lastFrame: 47
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Flaggenhalterung
-        weight: 1
-      - path: Flaggenhalterung/bend1Handle
-        weight: 1
-      - path: Flaggenhalterung/flaggenende
-        weight: 1
-      - path: Flaggenhalterung/flaggenstange
-        weight: 1
-      - path: Gelenk
-        weight: 1
-      - path: Gelenk/gelenkMesh
-        weight: 1
-      - path: Gelenk/gelenkTransform
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk1
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk1/transform1
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk2
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk2/transform2
-        weight: 1
-      - path: poleBase
-        weight: 1
-      - path: poleBase/cut_form
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenende
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenende/transform4
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenstange
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenstange/transform3
-        weight: 1
-      - path: poleBase/poleBase 1
-        weight: 1
-      - path: poleBase/poleBase 1/transform5
-        weight: 1
-      - path: poleBase/poleBase1
-        weight: 1
-      - path: poleExtension
-        weight: 1
-      - path: pSphere1
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-    - serializedVersion: 16
-      name: showFlagConnector
-      takeName: Take 001
-      firstFrame: 48
-      lastFrame: 52
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Flaggenhalterung
-        weight: 1
-      - path: Flaggenhalterung/bend1Handle
-        weight: 1
-      - path: Flaggenhalterung/flaggenende
-        weight: 1
-      - path: Flaggenhalterung/flaggenstange
-        weight: 1
-      - path: Gelenk
-        weight: 1
-      - path: Gelenk/gelenkMesh
-        weight: 1
-      - path: Gelenk/gelenkTransform
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk1
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk1/transform1
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk2
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk2/transform2
-        weight: 1
-      - path: poleBase
-        weight: 1
-      - path: poleBase/cut_form
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenende
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenende/transform4
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenstange
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenstange/transform3
-        weight: 1
-      - path: poleBase/poleBase 1
-        weight: 1
-      - path: poleBase/poleBase 1/transform5
-        weight: 1
-      - path: poleBase/poleBase1
-        weight: 1
-      - path: poleExtension
-        weight: 1
-      - path: pSphere1
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-    - serializedVersion: 16
-      name: FullExtend
-      takeName: Take 001
-      firstFrame: 53
-      lastFrame: 75
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Flaggenhalterung
-        weight: 1
-      - path: Flaggenhalterung/bend1Handle
-        weight: 1
-      - path: Flaggenhalterung/flaggenende
-        weight: 1
-      - path: Flaggenhalterung/flaggenstange
-        weight: 1
-      - path: Gelenk
-        weight: 1
-      - path: Gelenk/gelenkMesh
-        weight: 1
-      - path: Gelenk/gelenkTransform
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk1
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk1/transform1
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk2
-        weight: 1
-      - path: Gelenk/gelenkTransform/gelenk2/transform2
-        weight: 1
-      - path: poleBase
-        weight: 1
-      - path: poleBase/cut_form
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenende
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenende/transform4
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenstange
-        weight: 1
-      - path: poleBase/cut_form/pasted__flaggenstange/transform3
-        weight: 1
-      - path: poleBase/poleBase 1
-        weight: 1
-      - path: poleBase/poleBase 1/transform5
-        weight: 1
-      - path: poleBase/poleBase1
-        weight: 1
-      - path: poleExtension
-        weight: 1
-      - path: pSphere1
+      - path: flagPole
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
@@ -481,7 +126,7 @@ ModelImporter:
     armStretch: .0500000007
     legStretch: .0500000007
     feetSpacing: 0
-    rootMotionBoneName: poleBase
+    rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   additionalBone: 0
