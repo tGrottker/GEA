@@ -5,6 +5,7 @@ public class MinimapLighting : MonoBehaviour {
 
 	public Light minimapLighting;
 	public Light flashlight;
+	public Light charAmbientLight;
 	
 	void OnPreRender () {
 		minimapLighting.enabled = false;
@@ -12,5 +13,6 @@ public class MinimapLighting : MonoBehaviour {
 	
 	void OnPostRender () {
 		flashlight.enabled = true;
+		charAmbientLight.enabled = true;
 	}
 }
