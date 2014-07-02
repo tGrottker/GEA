@@ -140,7 +140,7 @@ public class PersonMovement : MonoBehaviour
 		view = gameObject.transform.forward.normalized;
 		grid = plane.GetComponent <GameGrid> ();
 		nextMove = 0;
-		pauseMenu = GameObject.Find ("Main Camera").GetComponent<PauseMenu> ();
+		pauseMenu = GameObject.FindWithTag("MainCamera").GetComponent<PauseMenu> ();
 	}
 
 		// Update is called once per frame
@@ -212,8 +212,9 @@ public class PersonMovement : MonoBehaviour
 		bool checkField = Input.GetMouseButtonDown (0);
 		bool flagField = Input.GetMouseButtonDown (1);
 	
-		if (pauseMenu.paused) {
+		/*if (pauseMenu.paused) {
 			return;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 								if (grid.isFinished ()) {										print ("You won!");								}						} else if (flagField) {								nextMove = nextMove + 0.3f;								Vector3 field = position + view / 2;								int x = Mathf.FloorToInt (field.x);								int z = Mathf.FloorToInt (field.z);								grid.toggleFlagAtPosition (nt = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
@@ -230,6 +231,9 @@ public class PersonMovement : MonoBehaviour
 						GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.1f, field.z), Quaternion.identity) as GameObject;
 =======
 		}else{
+=======
+		}else{*/
+>>>>>>> - added trees
 			if (nextMove < Time.time) {
 				if (stepForward) {
 					nextMove = nextMove + 1.2f;
@@ -358,11 +362,14 @@ public class PersonMovement : MonoBehaviour
 				}
 			}
 		//}
+<<<<<<< HEAD
 	}
 
 =======
 			}
 		}
+=======
+>>>>>>> - added trees
 	}
 
 >>>>>>> resolved errors
