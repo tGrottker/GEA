@@ -37,30 +37,16 @@ public class PersonMovement : MonoBehaviour
 =======
 >>>>>>> created and added FlagSprite for Minimap
 
-		// Use this for initialization
-		void Start ()
-		{
-				position = gameObject.transform.position;
-				view = gameObject.transform.forward.normalized;
-				grid = plane.GetComponent <GameGrid> ();
-				nextMove = 0;
-				pauseMenu = GameObject.Find ("Main Camera").GetComponent<PauseMenu> ();
-		}
+	// Use this for initialization
+	void Start () {
+		position = gameObject.transform.position;
+		view = gameObject.transform.forward.normalized;
+		grid = plane.GetComponent <GameGrid> ();
+		nextMove = 0;
+		pauseMenu = GameObject.Find ("Main Camera").GetComponent<PauseMenu> ();
+	}
 
-		// Update is called once per frame
-		void Update ()
-		{
-				bool stepForward = Input.GetKeyDown (KeyCode.W);
-				bool stepBack = Input.GetKeyDown (KeyCode.S);
-				bool turnLeft = Input.GetKeyDown (KeyCode.A);
-				bool turnRight = Input.GetKeyDown (KeyCode.D);
-				bool checkField = Input.GetMouseButtonDown (0);
-				bool flagField = Input.GetMouseButtonDown (1);
-				
-				if (pauseMenu.paused) {
-						return;
-				}
-
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 				if (nextMove < Time.time) {
@@ -119,6 +105,20 @@ public class PersonMovement : MonoBehaviour
 =======
 >>>>>>> added new Flag model; added new Mine model, added lights to flag, added animation to flag
 		if (!paused) {
+=======
+	// Update is called once per frame
+	void Update () {
+		bool stepForward = Input.GetKeyDown (KeyCode.W);
+		bool stepBack = Input.GetKeyDown (KeyCode.S);
+		bool turnLeft = Input.GetKeyDown (KeyCode.A);
+		bool turnRight = Input.GetKeyDown (KeyCode.D);
+		bool checkField = Input.GetMouseButtonDown (0);
+		bool flagField = Input.GetMouseButtonDown (1);
+	
+		if (pauseMenu.paused) {
+			return;
+		}else{
+>>>>>>> resolved errors
 			if (nextMove < Time.time) {
 				if (stepForward) {
 					nextMove = nextMove + 1.2f;
@@ -164,6 +164,7 @@ public class PersonMovement : MonoBehaviour
 					int x = Mathf.FloorToInt (field.x);
 					int z = Mathf.FloorToInt (field.z);
 					bool flagable = grid.hasLidAtPosition (x, z);
+<<<<<<< HEAD
 					if(flagable){
 <<<<<<< HEAD
 						GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.5f, field.z), Quaternion.identity) as GameObject;
@@ -172,6 +173,11 @@ public class PersonMovement : MonoBehaviour
 >>>>>>> created and added FlagSprite for Minimap
 =======
 						GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.1f, field.z), Quaternion.identity) as GameObject;
+=======
+					if (flagable) {
+						GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.5f, field.z), Quaternion.identity) as GameObject;
+						flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
+>>>>>>> resolved errors
 						flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
 >>>>>>> added new Flag model; added new Mine model, added lights to flag, added animation to flag
 
@@ -184,14 +190,14 @@ public class PersonMovement : MonoBehaviour
 =======
 >>>>>>> created and added FlagSprite for Minimap
 				}
-
+			}
 		}
+	}
 
-		public Vector3 getCurrentField ()
-		{
-				Vector3 curPosition = position + view / 2;
-				curPosition.x = Mathf.FloorToInt (curPosition.x);
-				curPosition.z = Mathf.FloorToInt (curPosition.z);
-				return curPosition;
-		}
+	public Vector3 getCurrentField () {
+		Vector3 curPosition = position + view / 2;
+		curPosition.x = Mathf.FloorToInt (curPosition.x);
+		curPosition.z = Mathf.FloorToInt (curPosition.z);
+		return curPosition;
+	}
 }
