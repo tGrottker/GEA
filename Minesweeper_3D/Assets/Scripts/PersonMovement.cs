@@ -43,7 +43,7 @@ public class PersonMovement : MonoBehaviour
 		view = gameObject.transform.forward.normalized;
 		grid = plane.GetComponent <GameGrid> ();
 		nextMove = 0;
-		pauseMenu = GameObject.Find ("Main Camera").GetComponent<PauseMenu> ();
+		pauseMenu = GameObject.FindWithTag("MainCamera").GetComponent<PauseMenu> ();
 	}
 
 <<<<<<< HEAD
@@ -117,8 +117,7 @@ public class PersonMovement : MonoBehaviour
 	
 		if (pauseMenu.paused) {
 			return;
-		}else{
->>>>>>> resolved errors
+		}
 			if (nextMove < Time.time) {
 				if (stepForward) {
 					nextMove = nextMove + 1.2f;
@@ -191,7 +190,7 @@ public class PersonMovement : MonoBehaviour
 >>>>>>> created and added FlagSprite for Minimap
 				}
 			}
-		}
+		//}
 	}
 
 	public Vector3 getCurrentField () {
