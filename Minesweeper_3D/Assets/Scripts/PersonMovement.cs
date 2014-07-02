@@ -48,6 +48,7 @@ public class PersonMovement : MonoBehaviour
 >>>>>>> created and added FlagSprite for Minimap
 =======
 
+<<<<<<< HEAD
 =======
 >>>>>>> created and added FlagSprite for Minimap
 		// Use this for initialization
@@ -132,6 +133,76 @@ public class PersonMovement : MonoBehaviour
 >>>>>>> added new Flag model; added new Mine model, added lights to flag, added animation to flag
 		if (!paused) {
 =======
+=======
+	// Use this for initialization
+	void Start () {
+		position = gameObject.transform.position;
+		view = gameObject.transform.forward.normalized;
+		grid = plane.GetComponent <GameGrid> ();
+		nextMove = 0;
+		pauseMenu = GameObject.Find ("Main Camera").GetComponent<PauseMenu> ();
+	}
+
+		// Update is called once per frame
+		void Update () {
+				bool stepForward = Input.GetKeyDown (KeyCode.W);
+				bool stepBack = Input.GetKeyDown (KeyCode.S);
+				bool turnLeft = Input.GetKeyDown (KeyCode.A);
+				bool turnRight = Input.GetKeyDown (KeyCode.D);
+				bool checkField = Input.GetMouseButtonDown (0);
+				bool flagField = Input.GetMouseButtonDown (1);
+				
+				if (pauseMenu.paused) {
+						return;
+				}
+
+		if (!paused) {
+			if (nextMove < Time.time) {
+				if (stepForward) {
+					nextMove = nextMove + 1.2f;
+					position = position + view;
+					iTween.MoveTo (gameObject, iTween.Hash ("position", position, "time", 1f, "orienttopath", false, "lookahead", 0f, "easetype", "easeInOutQuad"));
+				} else if (stepBack) {
+					nextMove = nextMove + 1.2f;
+					position = position - view;
+					iTween.MoveTo (gameObject, iTween.Hash ("position", position, "time", 1f, "orienttopath", false, "lookahead", 0f, "easetype", "easeInOutQuad"));
+				} else if (turnLeft) {
+					nextMove = nextMove + 1.7f;
+					Vector3 viewn = -gameObject.transform.right.normalized;
+					position = position + (view + viewn) / 2;
+					view = viewn;
+					Vector3 looktarget = position + 100000 * view;
+					iTween.MoveTo (gameObject, iTween.Hash ("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, /*"looktarget", looktarget,*/"easetype", "easeInOutQuad"));
+					iTween.LookTo (gameObject, iTween.Hash ("looktarget", looktarget, "time", 1.5f));
+				} else if (turnRight) {
+					nextMove = nextMove + 1.7f;
+					Vector3 viewn = gameObject.transform.right.normalized;
+					position = position + (view + viewn) / 2;
+					view = viewn;
+					Vector3 looktarget = position + 100000 * view;
+					iTween.MoveTo (gameObject, iTween.Hash ("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, /*"looktarget", looktarget,*/"easetype", "easeInOutQuad"));
+					iTween.LookTo (gameObject, iTween.Hash ("looktarget", looktarget, "time", 1.5f));
+				} else if (checkField) {
+					nextMove = nextMove + 0.3f;
+					Vector3 field = position + view / 2;
+					int x = Mathf.FloorToInt (field.x);
+					int z = Mathf.FloorToInt (field.z);
+					grid.deleteLidAtPosition (x, z);
+					int state = grid.getGameGridAtPosition (x, z);
+					if (state == 9) {
+						print ("BOOOM!!!");
+						print ("You lost!");
+					}
+					if (grid.isFinished ()) {
+						print ("You won!");
+					}
+				} else if (flagField) {
+					nextMove = nextMove + 0.3f;
+					Vector3 field = position + view / 2;
+					int x = Mathf.FloorToInt (field.x);
+					int z = Mathf.FloorToInt (field.z);
+					bool flagable = grid.hasLidAtPosition (x, z);
+>>>>>>> resolved errors
 	// Update is called once per frame
 	void Update () {
 		bool stepForward = Input.GetKeyDown (KeyCode.W);
@@ -143,6 +214,7 @@ public class PersonMovement : MonoBehaviour
 	
 		if (pauseMenu.paused) {
 			return;
+<<<<<<< HEAD
 =======
 								if (grid.isFinished ()) {										print ("You won!");								}						} else if (flagField) {								nextMove = nextMove + 0.3f;								Vector3 field = position + view / 2;								int x = Mathf.FloorToInt (field.x);								int z = Mathf.FloorToInt (field.z);								grid.toggleFlagAtPosition (nt = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
 =======
@@ -156,12 +228,60 @@ public class PersonMovement : MonoBehaviour
 >>>>>>> created and added FlagSprite for Minimap
 					if(flagable){
 						GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.1f, field.z), Quaternion.identity) as GameObject;
+=======
+		}else{
+			if (nextMove < Time.time) {
+				if (stepForward) {
+					nextMove = nextMove + 1.2f;
+					position = position + view;
+					iTween.MoveTo (gameObject, iTween.Hash ("position", position, "time", 1f, "orienttopath", false, "lookahead", 0f, "easetype", "easeInOutQuad"));
+				} else if (stepBack) {
+					nextMove = nextMove + 1.2f;
+					position = position - view;
+					iTween.MoveTo (gameObject, iTween.Hash ("position", position, "time", 1f, "orienttopath", false, "lookahead", 0f, "easetype", "easeInOutQuad"));
+				} else if (turnLeft) {
+					nextMove = nextMove + 1.7f;
+					Vector3 viewn = -gameObject.transform.right.normalized;
+					position = position + (view + viewn) / 2;
+					view = viewn;
+					Vector3 looktarget = position + 100000 * view;
+					iTween.MoveTo (gameObject, iTween.Hash ("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, /*"looktarget", looktarget,*/"easetype", "easeInOutQuad"));
+					iTween.LookTo (gameObject, iTween.Hash ("looktarget", looktarget, "time", 1.5f));
+				} else if (turnRight) {
+					nextMove = nextMove + 1.7f;
+					Vector3 viewn = gameObject.transform.right.normalized;
+					position = position + (view + viewn) / 2;
+					view = viewn;
+					Vector3 looktarget = position + 100000 * view;
+					iTween.MoveTo (gameObject, iTween.Hash ("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, /*"looktarget", looktarget,*/"easetype", "easeInOutQuad"));
+					iTween.LookTo (gameObject, iTween.Hash ("looktarget", looktarget, "time", 1.5f));
+				} else if (checkField) {
+					nextMove = nextMove + 0.3f;
+					Vector3 field = position + view / 2;
+					int x = Mathf.FloorToInt (field.x);
+					int z = Mathf.FloorToInt (field.z);
+					grid.deleteLidAtPosition (x, z);
+					int state = grid.getGameGridAtPosition (x, z);
+					if (state == 9) {
+						print ("BOOOM!!!");
+						print ("You lost!");
+					}
+					if (grid.isFinished ()) {
+						print ("You won!");
+					}
+				} else if (flagField) {
+					nextMove = nextMove + 0.3f;
+					Vector3 field = position + view / 2;
+					int x = Mathf.FloorToInt (field.x);
+					int z = Mathf.FloorToInt (field.z);
+					bool flagable = grid.hasLidAtPosition (x, z);
+					if (flagable) {
+						GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.5f, field.z), Quaternion.identity) as GameObject;
+>>>>>>> resolved errors
 						flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
-
-						GameObject minimapFlag = Instantiate (flagSprite, new Vector3 (field.x, 0.2f, field.z), flagSprite.transform.rotation) as GameObject;
-						minimapFlag.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
 					}
 				}
+<<<<<<< HEAD
 
 >>>>>>> created and added FlagSprite for Minimap
 		}
@@ -240,6 +360,12 @@ public class PersonMovement : MonoBehaviour
 		//}
 	}
 
+=======
+			}
+		}
+	}
+
+>>>>>>> resolved errors
 	public Vector3 getCurrentField () {
 		Vector3 curPosition = position + view / 2;
 		curPosition.x = Mathf.FloorToInt (curPosition.x);
