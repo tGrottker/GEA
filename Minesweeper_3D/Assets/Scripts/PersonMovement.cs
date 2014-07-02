@@ -15,31 +15,27 @@ public class PersonMovement : MonoBehaviour
 	private PauseMenu pauseMenu;	
 
 
-		// Use this for initialization
-		void Start ()
-		{
-				position = gameObject.transform.position;
-				view = gameObject.transform.forward.normalized;
-				grid = plane.GetComponent <GameGrid> ();
-				nextMove = 0;
-				pauseMenu = GameObject.Find ("Main Camera").GetComponent<PauseMenu> ();
-		}
+	// Use this for initialization
+	void Start () {
+		position = gameObject.transform.position;
+		view = gameObject.transform.forward.normalized;
+		grid = plane.GetComponent <GameGrid> ();
+		nextMove = 0;
+		pauseMenu = GameObject.Find ("Main Camera").GetComponent<PauseMenu> ();
+	}
 
-		// Update is called once per frame
-		void Update ()
-		{
-				bool stepForward = Input.GetKeyDown (KeyCode.W);
-				bool stepBack = Input.GetKeyDown (KeyCode.S);
-				bool turnLeft = Input.GetKeyDown (KeyCode.A);
-				bool turnRight = Input.GetKeyDown (KeyCode.D);
-				bool checkField = Input.GetMouseButtonDown (0);
-				bool flagField = Input.GetMouseButtonDown (1);
-				
-				if (pauseMenu.paused) {
-						return;
-				}
-
-		if (!paused) {
+	// Update is called once per frame
+	void Update () {
+		bool stepForward = Input.GetKeyDown (KeyCode.W);
+		bool stepBack = Input.GetKeyDown (KeyCode.S);
+		bool turnLeft = Input.GetKeyDown (KeyCode.A);
+		bool turnRight = Input.GetKeyDown (KeyCode.D);
+		bool checkField = Input.GetMouseButtonDown (0);
+		bool flagField = Input.GetMouseButtonDown (1);
+	
+		if (pauseMenu.paused) {
+			return;
+		}else{
 			if (nextMove < Time.time) {
 				if (stepForward) {
 					nextMove = nextMove + 1.2f;
@@ -85,23 +81,23 @@ public class PersonMovement : MonoBehaviour
 					int x = Mathf.FloorToInt (field.x);
 					int z = Mathf.FloorToInt (field.z);
 					bool flagable = grid.hasLidAtPosition (x, z);
-					if(flagable){
-					GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.5f, field.z), Quaternion.identity) as GameObject;
-					flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
+					if (flagable) {
+						GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.5f, field.z), Quaternion.identity) as GameObject;
+						flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
 						flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
 
 						GameObject minimapFlag = Instantiate (flagSprite, new Vector3 (field.x, 0.2f, field.z), flagSprite.transform.rotation) as GameObject;
 						minimapFlag.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
 					}
 				}
-
+			}
 		}
+	}
 
-		public Vector3 getCurrentField ()
-		{
-				Vector3 curPosition = position + view / 2;
-				curPosition.x = Mathf.FloorToInt (curPosition.x);
-				curPosition.z = Mathf.FloorToInt (curPosition.z);
-				return curPosition;
-		}
+	public Vector3 getCurrentField () {
+		Vector3 curPosition = position + view / 2;
+		curPosition.x = Mathf.FloorToInt (curPosition.x);
+		curPosition.z = Mathf.FloorToInt (curPosition.z);
+		return curPosition;
+	}
 }
