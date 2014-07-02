@@ -21,7 +21,7 @@ public class PersonMovement : MonoBehaviour
 		view = gameObject.transform.forward.normalized;
 		grid = plane.GetComponent <GameGrid> ();
 		nextMove = 0;
-		pauseMenu = GameObject.Find ("Main Camera").GetComponent<PauseMenu> ();
+		pauseMenu = GameObject.FindWithTag("MainCamera").GetComponent<PauseMenu> ();
 	}
 
 	// Update is called once per frame
@@ -33,9 +33,9 @@ public class PersonMovement : MonoBehaviour
 		bool checkField = Input.GetMouseButtonDown (0);
 		bool flagField = Input.GetMouseButtonDown (1);
 	
-		if (pauseMenu.paused) {
+		/*if (pauseMenu.paused) {
 			return;
-		}else{
+		}else{*/
 			if (nextMove < Time.time) {
 				if (stepForward) {
 					nextMove = nextMove + 1.2f;
@@ -91,7 +91,7 @@ public class PersonMovement : MonoBehaviour
 					}
 				}
 			}
-		}
+		//}
 	}
 
 	public Vector3 getCurrentField () {
