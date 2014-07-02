@@ -9,6 +9,8 @@ Project("{18BC6781-F3BD-D19E-7120-59BF6D87E55B}") = "Minesweeper_3D", "Assembly-
 EndProject
 Project("{18BC6781-F3BD-D19E-7120-59BF6D87E55B}") = "Minesweeper_3D", "Assembly-UnityScript-firstpass.unityproj", "{17D7305C-24F6-FA6D-7B70-E68D4BEDB2C6}"
 EndProject
+Project("{18BC6781-F3BD-D19E-7120-59BF6D87E55B}") = "Minesweeper_3D", "Assembly-UnityScript-Editor.unityproj", "{82C28921-52B3-596F-076E-5612F52449ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,11 +33,15 @@ Global
 		{17D7305C-24F6-FA6D-7B70-E68D4BEDB2C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17D7305C-24F6-FA6D-7B70-E68D4BEDB2C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17D7305C-24F6-FA6D-7B70-E68D4BEDB2C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82C28921-52B3-596F-076E-5612F52449ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82C28921-52B3-596F-076E-5612F52449ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82C28921-52B3-596F-076E-5612F52449ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82C28921-52B3-596F-076E-5612F52449ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																								GlobalSection(MonoDevelopProperties) = preSolution
+																																				GlobalSection(MonoDevelopProperties) = preSolution
 		Startupitem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
