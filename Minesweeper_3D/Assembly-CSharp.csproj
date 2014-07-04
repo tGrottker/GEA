@@ -49,6 +49,7 @@
      <Compile Include="Assets\Pixelplacement\iTweenPath\iTweenPath.cs" />
      <Compile Include="Assets\Scripts\CameraLighting.cs" />
      <Compile Include="Assets\Scripts\GameGrid.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\MinimapLighting.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\PersonMovement.cs" />
