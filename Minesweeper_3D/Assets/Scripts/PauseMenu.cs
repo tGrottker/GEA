@@ -24,7 +24,7 @@ public class PauseMenu : MonoBehaviour {
 			}
 			if (GUI.Button(new Rect(0, 60, buttonWidth, buttonHeight), "Back to Mainmenu")) {
 				print("Exiting game and going to main menu");
-				// TODO Application.LoadLevel(0);
+				Application.LoadLevel("Main_Menu");
 			}
 			if (GUI.Button(new Rect(0, 120, buttonWidth, buttonHeight), "Exit Game")) {
 				Application.Quit();
