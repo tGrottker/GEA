@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour {
 			GUI.BeginGroup(new Rect(((Screen.width/2) - (groupWidth/2)), ((Screen.height/2) - (groupHeight/2)), groupWidth, groupHeight));
 			if (GUI.Button(new Rect(0, 0, buttonWidth, buttonHeight), "Restart Game")) {
 				print("Restarting game");
-				// TODO Application.LoadLevel(1);
+				Application.LoadLevel("Main_Scene");
 			}
 			if (GUI.Button(new Rect(0, 60, buttonWidth, buttonHeight), "Back to Mainmenu")) {
 				print("Exiting game and going to main menu");
