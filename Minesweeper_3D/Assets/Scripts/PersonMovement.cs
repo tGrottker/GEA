@@ -99,6 +99,7 @@ public class PersonMovement : MonoBehaviour
 		return curPosition;
 	}
 	private void gameOver(int x, int z){
+		GameObject.FindWithTag("MainCamera").audio.Play ();
 		PersonMovement personMovement = GameObject.FindWithTag ("Player").GetComponent<PersonMovement>();
 		personMovement.enabled = false;
 
