@@ -53,13 +53,11 @@ public class GameGrid : MonoBehaviour{
 		}
 	}
 
-		public void deleteLidAtPosition (int row, int column)
-		{
-				if (hasLidAtPosition (row, column) && (!hasFlagAtPosition (row, column))) {
-						Destroy (this.lidGrid [row, column]);
-						leftLids--;
-				}
+	public bool hasLidAtPosition(int row, int column){
+		if (this.lidGrid [row, column]) {
+			return true;
 		}
+		return false;
 	}
 
 	private bool hasFlagAtPosition (int row, int column){
