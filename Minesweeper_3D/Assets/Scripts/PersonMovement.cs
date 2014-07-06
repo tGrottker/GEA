@@ -6,6 +6,10 @@ public class PersonMovement : MonoBehaviour
 	public GameObject plane;
 	public GameObject flagPrefab;
 	public GameObject flagSprite;
+	public GameObject explosion;
+	public GameObject smileyBad;
+	public GameObject smileyGood;
+
 	private Vector3 position;
 	private Vector3 view;
 	private GameGrid grid;
@@ -74,11 +78,10 @@ public class PersonMovement : MonoBehaviour
 				grid.deleteLidAtPosition (x, z);
 				int state = grid.getGameGridAtPosition (x, z);
 				if (state == 9) {
-					print ("BOOOM!!!");
-					print ("You lost!");
+					gameOver(x, z);
 				}
 				if (grid.isFinished ()) {
-					print ("You won!");
+					Won ();
 				}
 			} else if (flagField) {
 				nextMove = nextMove + 0.3f;
@@ -94,5 +97,31 @@ public class PersonMovement : MonoBehaviour
 		curPosition.x = Mathf.FloorToInt (curPosition.x);
 		curPosition.z = Mathf.FloorToInt (curPosition.z);
 		return curPosition;
+	}
+	private void gameOver(int x, int z){
+		PersonMovement personMovement = GameObject.FindWithTag ("Player").GetComponent<PersonMovement>();
+		personMovement.enabled = false;
+
+		mouseLook.enabled = false;
+		GameObject foundMine = grid.getMineAtPosition (x, z);
+		GameObject explosionObject = Instantiate (explosion, new Vector3 (foundMine.transform.position.x , -1, foundMine.transform.position.z), explosion.transform.rotation) as GameObject;
+
+		iTween.MoveTo(gameObject, iTween.Hash("position", position - view, "time", 1.0f, "rotation", gameObject.transform.rotation));
+		iTween.RotateTo (gameObject, new Vector3(-90.0f, 0.0f, 0), 1.0f);
+		pauseMenu.paused = true;
+
+		GameObject smileyBadObject = Instantiate (smileyBad, new Vector3(4.5f, 4.5f, 4.5f), smileyBad.transform.rotation) as GameObject;
+		smileyBadObject.transform.parent = GameObject.FindWithTag ("MinimapCam").GetComponent<Transform> ();
+	}
+
+	private void Won() {
+		PersonMovement personMovement = GameObject.FindWithTag ("Player").GetComponent<PersonMovement>();
+		personMovement.enabled = false;
+		
+		mouseLook.enabled = false;
+		pauseMenu.paused = true;
+
+		GameObject smileyGoodObject = Instantiate (smileyGood, new Vector3(4.5f, 4.5f, 4.5f), smileyGood.transform.rotation) as GameObject;
+		smileyGoodObject.transform.parent = GameObject.FindWithTag ("MinimapCam").GetComponent<Transform> ();
 	}
 }
