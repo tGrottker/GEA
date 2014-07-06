@@ -26,6 +26,7 @@ public class PersonMovement : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
+		
 				bool stepForward = Input.GetKeyDown (KeyCode.W);
 				bool stepBack = Input.GetKeyDown (KeyCode.S);
 				bool turnLeft = Input.GetKeyDown (KeyCode.A);
@@ -37,17 +38,18 @@ public class PersonMovement : MonoBehaviour
 						return;
 				}
 
-				if (nextMove < Time.time) {
+				float currentTime = Time.time;
+				if (nextMove < currentTime) {
 						if (stepForward) {
-								nextMove = nextMove + 1.2f;
+								nextMove = currentTime + 1.2f;
 								position = position + view;
 								iTween.MoveTo (gameObject, iTween.Hash ("position", position, "time", 1f, "orienttopath", false, "lookahead", 0f, "easetype", "easeInOutQuad"));
 						} else if (stepBack) {
-								nextMove = nextMove + 1.2f;
+								nextMove = currentTime + 1.2f;
 								position = position - view;
 								iTween.MoveTo (gameObject, iTween.Hash ("position", position, "time", 1f, "orienttopath", false, "lookahead", 0f, "easetype", "easeInOutQuad"));
 						} else if (turnLeft) {
-								nextMove = nextMove + 1.7f;
+								nextMove = currentTime + 1.7f;
 								Vector3 viewn = -gameObject.transform.right.normalized;
 								position = position + (view + viewn) / 2;
 								view = viewn;
@@ -55,7 +57,7 @@ public class PersonMovement : MonoBehaviour
 								iTween.MoveTo (gameObject, iTween.Hash ("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, /*"looktarget", looktarget,*/"easetype", "easeInOutQuad"));
 								iTween.LookTo (gameObject, iTween.Hash ("looktarget", looktarget, "time", 1.5f));
 						} else if (turnRight) {
-								nextMove = nextMove + 1.7f;
+								nextMove = currentTime + 1.7f;
 								Vector3 viewn = gameObject.transform.right.normalized;
 								position = position + (view + viewn) / 2;
 								view = viewn;
@@ -63,7 +65,7 @@ public class PersonMovement : MonoBehaviour
 								iTween.MoveTo (gameObject, iTween.Hash ("position", position, "time", 1.5f, "orienttopath", false, "lookahead", 0f, /*"looktarget", looktarget,*/"easetype", "easeInOutQuad"));
 								iTween.LookTo (gameObject, iTween.Hash ("looktarget", looktarget, "time", 1.5f));
 						} else if (checkField) {
-								nextMove = nextMove + 0.3f;
+								nextMove = currentTime + 0.3f;
 								Vector3 field = position + view / 2;
 								int x = Mathf.FloorToInt (field.x);
 								int z = Mathf.FloorToInt (field.z);
@@ -77,7 +79,7 @@ public class PersonMovement : MonoBehaviour
 										print ("You won!");
 								}
 						} else if (flagField) {
-								nextMove = nextMove + 0.3f;
+								nextMove = currentTime + 0.3f;
 								Vector3 field = position + view / 2;
 								int x = Mathf.FloorToInt (field.x);
 								int z = Mathf.FloorToInt (field.z);
