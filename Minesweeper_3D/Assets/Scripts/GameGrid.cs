@@ -10,6 +10,7 @@ public class GameGrid : MonoBehaviour{
 	private int[,] gameGrid;
 	private GameObject[,] lidGrid;
 	private GameObject[,] flagGrid;
+	private GameObject[,] mineGrid;
 	private PersonMovement characterScript;
 	private GameObject minimapPositionSprite;
 	public GameObject lidPrefab;
@@ -84,6 +85,7 @@ public class GameGrid : MonoBehaviour{
 		this.gameGrid = new int[this.rows, this.columns];
 		this.lidGrid = new GameObject[this.rows, this.columns];
 		this.flagGrid = new GameObject[this.rows, this.columns];
+		this.mineGrid = new GameObject[this.rows, this.columns];
 		for (int i = 0; i < this.rows; i++) {
 			for (int j  = 0; j < this.columns; j++) {
 				this.gameGrid [i, j] = 0;
@@ -91,6 +93,7 @@ public class GameGrid : MonoBehaviour{
 				lidObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
 				this.lidGrid [i, j] = lidObject;
 				this.flagGrid [i, j] = null;
+				this.mineGrid [i, j] = null;
 			}
 		}
 
@@ -112,6 +115,7 @@ public class GameGrid : MonoBehaviour{
 			GameObject mineObject = Instantiate (minePrefab, new Vector3 (x + 0.5f, 0f, y + 0.5f), Quaternion.identity) as GameObject;
 			mineObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
 			this.gameGrid [x, y] = 9;
+			this.mineGrid [x, y] = mineObject;
 			for (int i = Mathf.Max(x-1, 0); i <= Mathf.Min(x+1, this.columns-1); i++) {
 				for (int j = Mathf.Max(y-1, 0); j <= Mathf.Min (y+1, this.rows-1); j++) {
 					if (this.gameGrid [i, j] != 9) {
@@ -164,6 +168,10 @@ public class GameGrid : MonoBehaviour{
 		actualMinimapPosition.x = actualMinimapPosition.x + 0.5f;
 		actualMinimapPosition.z = actualMinimapPosition.z + 0.5f;
 		return actualMinimapPosition;
+	}
+
+	public GameObject getMineAtPosition(int row, int column){
+		return this.mineGrid [row, column];
 	}
 
 	// Update is called once per frame
