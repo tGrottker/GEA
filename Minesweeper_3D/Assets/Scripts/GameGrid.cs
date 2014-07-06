@@ -47,7 +47,7 @@ public class GameGrid : MonoBehaviour{
 	}
 
 	public void deleteLidAtPosition (int row, int column){
-		if (hasLidAtPosition (row, column) && (!hasFlagAtPosition (row, column))) {
+		if (isFlagable (row, column)) {
 			Destroy (this.lidGrid [row, column]);
 			leftLids--;
 		}
@@ -60,27 +60,25 @@ public class GameGrid : MonoBehaviour{
 		return false;
 	}
 
-	private bool hasFlagAtPosition (int row, int column){
-		if (this.flagGrid [row, column] == null) {
-				return false;
-		}
-		return true;
-	}
-
-	public void toggleFlagAtPosition (int row, int column){
-		GameObject flag = this.flagGrid [row, column];
-		if (flag != null) {
-				Destroy (flag);
-		} else {
-				if (!hasLidAtPosition (row, column)) {
-						return;
+	public void toggleFlag(int row, int column) {
+		GameObject flag;
+		if (isFlagable (row, column)) {
+			flag = Instantiate(flagPrefab, new Vector3(row + 0.5f, 0.5f, column + 0.5f), Quaternion.identity) as GameObject;
+			flag.transform.parent = GameObject.FindWithTag("GameArea").GetComponent<Transform>();
+			flagGrid[row, column] = flag;
+				} else {
+			flag = flagGrid[row, column];
+			Destroy(flag);
+			flagGrid[row, column] = null;
 				}
-				flag = Instantiate (flagPrefab, new Vector3 (row + 0.5f, 0.1f, column + 0.5f), Quaternion.identity) as GameObject;
-				flag.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
-				this.flagGrid [row, column] = flag;
-				print("flag instantiated at (" + row + ", " + column + ")");
 		}
-	}
+
+	private bool isFlagable(int row, int column) {
+			if (flagGrid [row, column] == null && hasLidAtPosition(row, column)) {
+						return true;
+				}
+		return false;
+		}
 
 	private  void initGameGrid (){
 		this.gameGrid = new int[this.rows, this.columns];
