@@ -12,7 +12,7 @@ public class Credits : MonoBehaviour {
 	}
 	
 	void OnGUI() {
-		if (GUI.Button (new Rect (280, 400, buttonWidth, buttonHeight), "Back to Mainmenu")) {
+		if (GUI.Button (new Rect ((Screen.width / 2) - (buttonWidth / 2), (Screen.height / 2) + 100 , buttonWidth, buttonHeight), "Back to Mainmenu")) {
 			Application.LoadLevel("Main_Menu");
 		}
 	}
