@@ -8,6 +8,7 @@ public class PersonMovement : MonoBehaviour
 	public GameObject flagSprite;
 	public GameObject explosion;
 	public GameObject smileyBad;
+	public GameObject smileyGood;
 
 	private Vector3 position;
 	private Vector3 view;
@@ -80,7 +81,7 @@ public class PersonMovement : MonoBehaviour
 					gameOver(x, z);
 				}
 				if (grid.isFinished ()) {
-					print ("You won!");
+					Won ();
 				}
 			} else if (flagField) {
 				nextMove = nextMove + 0.3f;
@@ -111,5 +112,16 @@ public class PersonMovement : MonoBehaviour
 
 		GameObject smileyBadObject = Instantiate (smileyBad, new Vector3(4.5f, 4.5f, 4.5f), smileyBad.transform.rotation) as GameObject;
 		smileyBadObject.transform.parent = GameObject.FindWithTag ("MinimapCam").GetComponent<Transform> ();
+	}
+
+	private void Won() {
+		PersonMovement personMovement = GameObject.FindWithTag ("Player").GetComponent<PersonMovement>();
+		personMovement.enabled = false;
+		
+		mouseLook.enabled = false;
+		pauseMenu.paused = true;
+
+		GameObject smileyGoodObject = Instantiate (smileyGood, new Vector3(4.5f, 4.5f, 4.5f), smileyGood.transform.rotation) as GameObject;
+		smileyGoodObject.transform.parent = GameObject.FindWithTag ("MinimapCam").GetComponent<Transform> ();
 	}
 }
