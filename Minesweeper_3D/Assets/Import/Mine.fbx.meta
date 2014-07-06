@@ -3,11 +3,42 @@ guid: 0114efcad2df57d4089fa4094d01f991
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pSphere1
+    100000: landmineBase
+    100002: landmineBase1
+    100004: landmineBase2
+    100006: landmineBase3
+    100008: landmineTop
+    100010: landmineTop1
+    100012: landmineTop2
+    100014: landmineTop3
+    100016: //RootNode
+    400000: landmineBase
+    400002: landmineBase1
+    400004: landmineBase2
+    400006: landmineBase3
+    400008: landmineTop
+    400010: landmineTop1
+    400012: landmineTop2
+    400014: landmineTop3
+    400016: //RootNode
+    2300000: landmineBase1
+    2300002: landmineBase2
+    2300004: landmineBase3
+    2300006: landmineTop1
+    2300008: landmineTop2
+    2300010: landmineTop3
+    3300000: landmineBase1
+    3300002: landmineBase2
+    3300004: landmineBase3
+    3300006: landmineTop1
+    3300008: landmineTop2
+    3300010: landmineTop3
+    4300000: landmineBase1
+    4300002: landmineBase2
+    4300004: landmineBase3
+    4300006: landmineTop1
+    4300008: landmineTop2
+    4300010: landmineTop3
     9500000: //RootNode
   materials:
     importMaterials: 1
