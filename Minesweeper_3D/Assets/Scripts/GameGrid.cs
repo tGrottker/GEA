@@ -52,7 +52,7 @@ public class GameGrid : MonoBehaviour
 
 		public void deleteLidAtPosition (int row, int column)
 		{
-				if (hasLidAtPosition (row, column)) {
+				if (isFlagable (row, column)) {
 						Destroy (this.lidGrid [row, column]);
 						leftLids--;
 				}
@@ -67,16 +67,26 @@ public class GameGrid : MonoBehaviour
 				}
 		}
 
-		public void toggleFlagAtPosition(int row, int column) {
-			isFlagable(row, column);
+		public void toggleFlagAtPosition (int row, int column)
+		{
+				GameObject flagObject;
+				if (isFlagable (row, column)) {
+						flagObject = Instantiate (flagPrefab, new Vector3 (row + 0.5f, 0.1f, column + 0.5f), Quaternion.identity) as GameObject;
+						flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();
+						flagGrid [row, column] = flagObject;
+				} else {
+						flagObject = flagGrid[row, column];
+						Destroy(flagObject);
+						flagGrid[row, column] = null;
+				}
 		}
 
-		private bool isFlagable(int row, int column) {
-			if (this.flagGrid[row, column] == null) {
-					print ("(" + row + "," + column + ") isFlagable");
-			       return true;
-			       }
-			       return false;
+		private bool isFlagable (int row, int column)
+		{
+				if (this.flagGrid [row, column] == null && hasLidAtPosition(row, column)) {
+						return true;
+				}
+				return false;
 		}
 
 		private  void initGameGrid ()

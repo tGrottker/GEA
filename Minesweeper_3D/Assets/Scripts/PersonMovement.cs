@@ -83,11 +83,7 @@ public class PersonMovement : MonoBehaviour
 								Vector3 field = position + view / 2;
 								int x = Mathf.FloorToInt (field.x);
 								int z = Mathf.FloorToInt (field.z);
-								grid.toggleFlagAtPosition (x, z);
-								/*bool flagable = grid.hasLidAtPosition (x, z);
-					GameObject flagObject = Instantiate (flagPrefab, new Vector3 (field.x, 0.1f, field.z), Quaternion.identity) as GameObject;
-					flagObject.transform.parent = GameObject.FindWithTag ("GameArea").GetComponent<Transform> ();*/
-								//flagObject.animation.Play();
+								grid.toggleFlagAtPosition (x, z);								
 						}
 				}
 
