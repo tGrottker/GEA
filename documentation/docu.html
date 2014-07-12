@@ -102,7 +102,40 @@
 		<p>Der Spieler bewegt sich mit den Tasten W, A, S und D.
 		Da das Spiel auf einem Raster statt findet, muss dem Spieler immer klar sein mit welchem Feld er aktuell interagiert.
 		Deswegen sollte der Spieler immer mittig vor einem Feld stehen.
-		Daraus folgt, dass der Spieler sich immer nur schrittweise bewegen kann.</p>
+		Daraus folgte, dass der Spieler sich immer nur schrittweise bewegen können darf.
+		Besonderes Augenmerk lag dabei auf den Rotationen.
+		Der Spieler durfte sich nicht nur auf der Stelle drehen, da er sonst nicht mehr mittig vor einem Feld stünde,
+		sondern entlag der Grenze schaute.
+		Stattdessen musste der Spieler eine Rotation um 90° um den entsprechenden Schnittpunkt der Felder machen.
+		Wenn er sich also nach links drehen will, rotiert der Spieler um den links neben ihm befindlichen Schnittpunkt der Felder.</p>
+		
+		<p>Anhand des folgenden Ausschnitts soll verdeutlicht werden, wie die Bewegungssteuerung implementiert wurde.</p>
+		
+		<div class="code">
+			<image src="pics/turnLeft.png"></image>
+		</div>
+		
+		<p>Um zu verhindern, dass wärend einer Bewegung eine andere gestartet wird und somit die Positionierung nicht mehr stimmt,
+		wird beim Auslösen einer Bewegung die Zeit ab der die nächste Bewegung folgen darf gesetzt.
+		Diese Zeit ist ein wenig länger als die Dauer der Bewegungsanimation und wird vor dem Start einer neuen Bewegung überprüft.
+		Als nächstes wird die neue Blickrichtung ermittelt.
+		Nun wird die neue Endposition des Spielers errechnet.
+		Der neue Fokuspunkt wird anhand der Blickrichtung ermittelt.
+		Der große Faktor ist nötig um geringe Abweichungen, die bei Rundungen entstehen können, auszugleichen.
+		Danach wird die Animation gestartet.</p>
+		
+		<h3>Pausemenü</h3>
+		
+		<p>Das Pausemenü wird durch das Drücken der Esc-Taste ausgelöst.
+		Auch am Ende des Spiels wird nach kurzer Zeit das Pausemenü angezeigt.
+		Wärend das Pausemenü aktiv ist, stopt die Zeit und die einzelnen Menüpunkte werden eingeblendet.
+		Zur Wahl stehen "Restart Game", "Back to Mainmenu" und "Exit Game".</p>
+		
+		<ul>
+			<li>"Restart Game" beendet das aktuelle Spiel und startet ein neues.</li>
+			<li>"Back to Mainmenu" beendet ebenfalls das aktuelle Spiel und zeigt das Hauptmenü an.</li>
+			<li>"Exit Game" beendet das Programm.</li>
+		</ul>
 		
 	</div>
 	
