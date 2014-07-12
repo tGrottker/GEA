@@ -1,0 +1,20 @@
+body {
+	background: url("pics/background.png") no-repeat fixed center center;
+	font: 100% arial, sans-serif;
+	color: white;
+}
+div.text {
+	margin-right: 400px;
+}
+a:link {
+	color: white;
+	text-decoration: none;
+}
+a:visited {
+	color: white;
+	text-decoration: none;
+}
+p {
+	text-indent: 15px;
+	text-align: left;
+}

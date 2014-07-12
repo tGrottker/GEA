@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Minesweeper 3D - Dokumentation</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+	
+	<div class="text">
+				
+		<h1>Minesweeper 3D</h1>
+		
+		<h2>Inhalt</h2>
+		<ul>
+			<li><a href="#original">Das Original</a></li>
+			<li><a href="#idea">Idee</a></li>
+			<li><a href="#description">Beschreibung</a></li>
+			<li><a href="#controlls">Steuerung</a></li>
+			<li><a href="#modelling">Modelierung</a></li>
+			<li><a href="#logic">Spiellogik</a></li>
+		</ul>
+		
+		<a name="original"></a>
+		<h2>Das Original</h2>
+		
+		<p>Das Original Spiel stammt von Windows und wurde erstmals der Version 3.1 beigelegt.
+		Seit Windows 8 ist es nicht mehr standardmäßg beigelegt, kann aber kostenlos nachinstalliert werden.</p>
+		
+		<p>Das Spielfeld ist rechteckig und in quadratische Felder unterteilt.
+		Zu Beginn sind alle Felder verdeckt.
+		Unter einigen der Feldern befinden sich Minen.
+		Durch Klicken auf ein Feld wird es aufgedeckt.
+		Sollte sich eine Mine darunter befinden, hat man das Spiel verloren.
+		Andernfalls zeigt das Feld die Anzahl der umliegenden Minen an.
+		Sollte sich unter keinem der angrenzenden Feldern eine Mine befinden wird dies durch ein leeres Feld angezeigt und es werden solange die
+		angrenzenden Felder aufgedeckt, bis an jedes äußerste aufgedeckte Feld mindestens eine Mine angrenzt.
+		Ziel des Spieles ist es in kürzest möglicher Zeit alle Felder ohne Mine aufzudecken.</p>
+		
+		<p>Um dem Spieler zu unterstützen, hat er die Möglickeit jedes nicht aufgedeckte Feld mittels eines Rechtsklicks mit einer Fahne zu markieren.
+		So markierte Felder können nicht aufgedeckt werden bis die Markierung entfernt wurde.
+		Wenn man das Spiel erfolgreich beendet, wird die Spielzeit in die Highscores aufgenommen und die Highscoreliste wird angezeigt.</p>
+	
+		<a name="idea"></a>
+		<h2>Idee</h2>
+		
+		<p>Die Idee war, das Spiel in 3D umzusezten und die Perspektive des Spielers zur First-Person zu ändern.
+		Zusätzlich sollten noch ein rundenbasierter Multiplayer-Modus und eine KI entwickelt werden.
+		Für diese Modi sollten auch Power-Ups, wie Bonusrunden und Scanner-Jams, verfügbar sein.
+		Das Spielfeld sollte verschiedene Settings erhalten, beispielsweise ein Wald- und ein Wüstensetting.</p>
+		
+		<a name="description"></a>
+		<h2>Beschreibung</h2>
+		
+		<p>Das Spiel ist eine 3D-, First-Person-Umsetzung des Originalspiels.</p>
+		
+		<p>Zunächst beginnt man im Hauptmenü.
+		Hier hat man die Wahl zwischen "Start Game", "Credits" und "Exit Game".
+		"Start Game" startet ein neues Spiel, "Credits" zeigt die Namen der Entwickler an und "Exit Game" beendet das Programm.</p>
+		
+		<p>Der Spieler beginnt in der oberen rechten Ecke des Spielfeldes.
+		Nun können nach und nach die Felder aufgedeckt werden.
+		Die Zahlen unter den aufgedeckten Feldern erscheinen auch auf dem Scanner um dem Spieler eine bessere Übersicht zu verschaffen.
+		Gleiches gilt für gesetze Markierungen, sie werden ebenfalls auf dem Scanner angezeigt..</p>
+		
+		<a name="controlls"></a>
+		<h2>Steuerung</h2>
+		
+		<h3>Bewegungssteuerung</h3>
+		
+		<p>Die Steuerung ist an die der meisten First-Person Spiele angelehnt.
+		Mit den Tasten W, A, S und D wird der Charakter bewegt.
+		Wobei A und D weder ein Seitschritt noch eine Drehung um die y-Achse des Charakters auslösen.
+		Stattdessen wird der Charakter in einem viertel Kreis nach links oder rechts bewegt.
+		Dadurch befindet der Spieler sich immer mittig vor einem Feld.</p>
+		
+		<p>Durch eine vor und zurück Bewegung der Maus, kann der Spieler die Ausrichtung der y-Achse der Kamera verändern und somit nach oben und
+		 unten blicken.</p>
+		 
+		<h3>Felder audecken und markieren</h3>
+		
+		<p>Mit einem Linksklick wird das vor dem Spieler befindliche aufgedeckt, wenn es nicht markiert oder bereits aufgedeckt ist.
+		Ein Rechtsklick markiert das Feld vor dem Spieler, wenn es noch nicht aufgedeckt ist, oder entfernt eine bereits vorhandene Markierung darauf.</p>
+		
+		<h3>Pause-Menü</h3>
+		
+		<p>Durch einen Druck auf die Esc-Taste wird das Spiel pausiert und das Pause-Menü geöffnet.
+		Hier hat man die Wahl zwischen "Restart Game", "Back to Mainmenu" und "Exit Game".
+		"Restart Game" beendet das aktuelle Spiel und startet ein neues.
+		"Back to Mainmenu" beendet das aktuelle Spiel und öffnet das Hauptmenü.
+		"Exit Game" beendet das Programm.</p>
+		
+		<a name="modelling"></a>
+		<h2>Modellierung</h2>
+		
+		<p></p>
+		
+		<a name="logic"></a>
+		<h2>Spiellogik</h2>
+		
+		<h3>Steuerung</h3>
+		
+		<p>Der Spieler bewegt sich mit den Tasten W, A, S und D.
+		Da das Spiel auf einem Raster statt findet, muss dem Spieler immer klar sein mit welchem Feld er aktuell interagiert.
+		Deswegen sollte der Spieler immer mittig vor einem Feld stehen.
+		Daraus folgt, dass der Spieler sich immer nur schrittweise bewegen kann.</p>
+		
+	</div>
+	
+</body>
