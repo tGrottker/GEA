@@ -18,6 +18,7 @@
 			<li><a href="#controlls">Steuerung</a></li>
 			<li><a href="#modelling">Modelierung</a></li>
 			<li><a href="#logic">Spiellogik</a></li>
+			<li><a href="#menu">Menüs</a></li>
 		</ul>
 		
 		<a name="original"></a>
@@ -68,14 +69,26 @@
 		<h3>Bewegungssteuerung</h3>
 		
 		<p>Die Steuerung ist an die der meisten First-Person Spiele angelehnt.
-		Mit den Tasten W, A, S und D wird der Charakter bewegt.
+		Durch eine vor und zurück Bewegung der Maus, kann der Spieler die Ausrichtung der y-Achse der Kamera verändern und somit nach oben und
+		unten blicken.
+		Die Blicksteuerung wurde bewusst auf nur eine Achse limitiert, um den Spieler nicht zu verwirren.
+		Wäre eine Blicksteuerung mit mehr Achsen zulässig, könnte der Spieler mit der Rotation der Spielfigur durcheinander kommen.</p>
+		 
+		<p>Mit den Tasten W, A, S und D wird der Charakter bewegt.
 		Wobei A und D weder ein Seitschritt noch eine Drehung um die y-Achse des Charakters auslösen.
 		Stattdessen wird der Charakter in einem viertel Kreis nach links oder rechts bewegt.
 		Dadurch befindet der Spieler sich immer mittig vor einem Feld.</p>
 		
-		<p>Durch eine vor und zurück Bewegung der Maus, kann der Spieler die Ausrichtung der y-Achse der Kamera verändern und somit nach oben und
-		 unten blicken.</p>
-		 
+		<p>Das Schema zeigt verdeutlicht das Problem.
+		Die roten Punkte stellen die Position des Spielers vor und nach der Drehung dar.
+		Der blaue Punkt ist der Punkt um den rotiert wird.
+		Wäre die Rotation nicht genau so implementiert, wäre es für den Spieler nicht nachvollziehbar vor welchem Feld er sich befindet,
+		da er entlang der Feldergrenze schaute.</p>
+		
+		<div class="schema">
+			<image src="pics/rotation.png"></image>
+		</div>
+		
 		<h3>Felder audecken und markieren</h3>
 		
 		<p>Mit einem Linksklick wird das vor dem Spieler befindliche aufgedeckt, wenn es nicht markiert oder bereits aufgedeckt ist.
@@ -92,11 +105,11 @@
 		<a name="modelling"></a>
 		<h2>Modellierung</h2>
 		
-		<p></p>
+		<p>Hier sollte dein Text stehen.</p>
 		
 		<a name="logic"></a>
 		<h2>Spiellogik</h2>
-		
+
 		<h3>Steuerung</h3>
 		
 		<p>Der Spieler bewegt sich mit den Tasten W, A, S und D.
@@ -109,7 +122,7 @@
 		Stattdessen musste der Spieler eine Rotation um 90° um den entsprechenden Schnittpunkt der Felder machen.
 		Wenn er sich also nach links drehen will, rotiert der Spieler um den links neben ihm befindlichen Schnittpunkt der Felder.</p>
 		
-		<p>Anhand des folgenden Ausschnitts soll verdeutlicht werden, wie die Bewegungssteuerung implementiert wurde.</p>
+		<p>Anhand des folgenden Ausschnitts soll gezeigt werden, wie die Bewegungssteuerung implementiert wurde.</p>
 		
 		<div class="code">
 			<image src="pics/turnLeft.png"></image>
@@ -136,6 +149,36 @@
 			<li>"Back to Mainmenu" beendet ebenfalls das aktuelle Spiel und zeigt das Hauptmenü an.</li>
 			<li>"Exit Game" beendet das Programm.</li>
 		</ul>
+		
+		<h3>Kamera</h3>
+		
+		<p>Es gibt nur First-Person-Perspektive, daher befindet sich die Kamera auf Kopfhöhe des Spielers.
+		Sie kann durch Vor- und Rückbewegung der Maus nach oben und unten ausgerichtet werden.</p>
+		
+		<p>Eine zweite Kamera befindet sich statisch über dem Spielfeld.
+		Das Bild dieser Kamera wird als Minimap auf dem Scanner, der sich immer im Blickfeld des Spielers befindet, zur Anzeige gebracht.</p>
+		
+		<a name="menu"></a>
+		<h2>Menüs</h2>
+		
+		<h3>Hauptmenü</h3>
+		
+		<p>Das Hauptmenü ist der Startpunkt des Spieles.
+		Hier kann der Spieler sich entscheiden, ob er ein neues Spiel vias "Start Game" beginnen, sich die "Credits" anschauen, 
+		oder durch einen Klick auf "Exit Game" das Spiel verlassen möchte.</p>
+		
+		<div class="screen">
+			<image src="pics/mainMenu.png"></image>
+		</div>
+		
+		<h3>Credits</h3>
+		
+		<p>Unter Credits werden nur die Namen der Entwickler und ein Button, durch den man, wenn man ihn anklickt,
+		ins Hauptmenü zurückkehrt, angezeigt.</p>
+		
+		<div class="screen">
+			<image src="pics/mainMenu.png"></image>		<!-- Platzhalterbild, bitte austauschen -->
+		</div>
 		
 	</div>
 	
