@@ -16,7 +16,7 @@
 			<li><a href="#idea">Idee</a></li>
 			<li><a href="#description">Beschreibung</a></li>
 			<li><a href="#controlls">Steuerung</a></li>
-			<li><a href="#modelling">Modelierung</a></li>
+			<li><a href="#modelling">Design</a></li>
 			<li><a href="#logic">Spiellogik</a></li>
 			<li><a href="#menu">Menüs</a></li>
 		</ul>
@@ -86,7 +86,7 @@
 		da er entlang der Feldergrenze schaute.</p>
 		
 		<div class="schema">
-			<image src="pics/rotation.png"></image>
+			<img src="pics/rotation.png">
 		</div>
 		
 		<h3>Felder audecken und markieren</h3>
@@ -103,21 +103,40 @@
 		"Exit Game" beendet das Programm.</p>
 		
 		<a name="modelling"></a>
-		<h2>Modellierung</h2>
+		<h2>Design</h2>
 		Die meisten Modelle wurden in Autodesk Maya 2015 entworfen. Da Texturen und Shader von Unity nicht übernommen werden, mussten diese in Unity erneut dem Modell hinzugefügt werden. UV-Anpassungen fanden bereits in Maya statt. Die Werte für Bumpmap-Tiefe und Texturwiederholung wurden ebenfalls von Maya übernommen.
 		<h3>Scanner</h3>
-        <p>
-        <img src="pics/scanner_maya.png">
-        Der Scanner dient zur Anzeige der Minimap. Zur Erstellung der Textur wurden die UV-Koordinaten so sortiert, dass das UV-Bild exportiert werden konnte und die Textur daraufgemappt werden konnte. Der Griff hat eine Bumpmap um ein Ledermaterial zu imitieren. Vier Sphären, die nebeneinander angeordnet sind, sollten ursprünglich als zusätzliche Anzeige der umliegenden Minen dienen, hierbei sollte die Anzahl als Binärzahl angezeigt werden. Die rechteckige Lücke wurde in Unity um ein rechteckiges Mesh ersetzt, welches eine Render-Textur zugeordnet bekam. Dieser Textur wurde eine orthographische Kamera zugeordnet, die das Spielfeld direkt von oben darstellt. Das Scannerobjekt wurde der Charakter-Kamera zugeordnet, sodass er sich immer im Blickfeld des Spielers befindet.
-        </p>
-        <h3>Flagge</h3>
+        <p><img src="pics/scanner_maya.png">
+        Der Scanner dient zur Anzeige der Minimap. Zur Erstellung der Textur wurden die UV-Koordinaten so sortiert, dass das UV-Bild exportiert werden konnte und die Textur daraufgemappt werden konnte. Der Griff hat eine Bumpmap um ein Ledermaterial zu imitieren. Vier Sphären, die nebeneinander angeordnet sind, sollten ursprünglich als zusätzliche Anzeige der umliegenden Minen dienen, hierbei sollte die Anzahl als Binärzahl angezeigt werden. Aktuell besitzen sie jedoch nur jeweils ein dauerhaft leuchtendes Punktlicht. Die rechteckige Lücke wurde in Unity um ein rechteckiges Mesh ersetzt, welches eine Render-Textur zugeordnet bekam. Dieser Textur wurde eine orthographische Kamera zugeordnet, die das Spielfeld direkt von oben darstellt. Damit die Minimap immer gut zu sehen ist, wird das Material von anderen Lichtern nicht beeinflusst. Das Scannerobjekt wurde der Charakter-Kamera zugeordnet, sodass er sich immer im Blickfeld des Spielers befindet.</p>
         
+        <h3>Flagge</h3>
+        <p><img src="pics/flag_maya.png">
+        Die Falgge ist eine, an einem Stab befestigte, Warnleuchte. Die Parabolelemente rotieren um die Mittelachse der Lampe. Da es in Unity Probleme mit halbtransparenten Objekten und durchscheinenden Lichtern gab, wurden die Lichter den Parabolelementen zugeordnet und außerhalb der Lampe platziert. Die halbtransparente Glasabdeckung wurde in Unity mit einem selbstleuchtenden Material ersetzt, um die Beleuchtung zu simulieren. Die Rotation wurde aus Maya importiert. Wie schon beim Griff des Scanners wurde der Boden der Lampe mit einer Bumpmap lederartig dargestellt. Die Stange bekam eine Metalltextur.</p>
+                
         <h3>Abdeckung</h3>
+        <p><img src="pics/lid_maya.png">
+        Die Abdeckung, die zur Verdeckung des Spielfeldes dient, wurden optisch der Waldszene agepasst. Das Modell ist eine deformierte Sphäre und mit einer Laubtextur versehen. Durch eine Flächenartige Anordnung der UV-Koordinaten wurde sichergestellt, dass die Textur nicht fehlplatziert wird.</p>
         
         <h3>Mine</h3>
+        <p><img src="pics/mine_maya.png">
+        Die Mine entspricht optisch einer Tellermine. Das Modell besteht aus mehreren Zylinderobjekten, die mit verschiedenfarbigen Metalltexturen versehen wurden.</p>
+        
+        <h3>Sprites</h3>
+        <p><img src="pics/sprites.png">
+        Die Sprites wurden in Photoshop als PNG-Datei erstellt. Mit einem Airbrush-Effekt soll das Aufsprühen der Zahlen simuliert werden soll. Das Standardmaterial der Sprites wurde durch ein diffuses Material ersetzt, damit sie von Lichtern beeinflusst werden und nicht leuchtend hervorstechen. Der Warnsprite steht für eine platzierte Flagge und ist nur in der Minimap sichtbar, genauso wie der Sieger und Verlierer-Smiley.</p>
         
         <h3>Terrain</h3>
+        <p>Das Spielfeld selbst besteht aus einem Plane-Objekt. Eine darunterliegende Terraintextur erlaubt es, Bäume um das Spielfeld aufzustellen. Es wurden die Bäume aus den Standardassets genutzt. Für eine düstere Atmosphäre wurde das Umgebungslicht reduziert, Nebel ab einem gewissen Abstand eingeblendet und eine nächtliche Skybox aus den Standardassets genutzt. Eine Grastexur mit einer Bumpmap simuliert den Waldboden.</p>
 		
+        <h3>Charakter</h3>
+        <p>Der Charakter wird durch die Hauptkamera dargestellt. Um den Blick des Charakters nachzuvollziehen, wurde mittels eines Spotlights und eines Lightcookies eine Taschenlampe simuliert. Ein schwaches Punktlicht kurz hinter der Kamera lässt den Scanner besser erkennen.</p>
+        
+        <h3>Kameraeffekte</h3>
+        <p>Um die Szene stimmiger zu gestalten, wurden einige Kameraeffekte eingesetzt.</p>
+        <h4>Hauptkamera</h4>
+        <p>Die Hauptkamera hat einen Bloom-Effekt("Fast Bloom") und eine Farbkorrektur("Color Correction Curves"). Der Bloomeffekt soll einen besseren Leuchteffekt bei den Flaggen und den Lampen am Scanner erzeugen. Durch die Farbkorrektur wurde die Sättigung verringert, um eine realistischere Farbgebung zu erzeugen.</p>
+        <h4>Minimap-Kamera</h4>
+         Die Minimap hat einen Krisel-Effekt("Noise Effect") und ebenfalls eine Farbkorrektur. Der Kriseleffekt soll dem Bildschirm einen analogen Touch verleihen, was durch die grüne Farbkorrektur unterstützt wird, da durch diese Monochromie das Alter des Geräts unterstrichen wird.
 		<a name="logic"></a>
 		<h2>Spiellogik</h2>
 
@@ -179,7 +198,7 @@
 		oder durch einen Klick auf "Exit Game" das Spiel verlassen möchte.</p>
 		
 		<div class="screen">
-			<image src="pics/mainMenu.png"></image>
+			<img src="pics/mainMenu.png">
 		</div>
 		
 		<h3>Credits</h3>
@@ -188,7 +207,7 @@
 		ins Hauptmenü zurückkehrt, angezeigt.</p>
 		
 		<div class="screen">
-			<image src="pics/mainMenu.png"></image>		<!-- Platzhalterbild, bitte austauschen -->
+			<img src="pics/credits.png">
 		</div>
 		
 	</div>
